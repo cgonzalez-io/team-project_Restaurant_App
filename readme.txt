@@ -1,6 +1,8 @@
 Restaurant Reservation System - Team 9
 //TODO: look into using the test data generator python package to generate test data for the database.
 
+use npm install to install the dependencies for the project.
+
 Project Description:
 This project implements a database system for managing restaurant reservations, customers, tables, and staff.
 
