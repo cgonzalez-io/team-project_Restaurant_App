@@ -28,7 +28,7 @@ Important SQL Queries:
 5. Find reservations for a specific customer.
 
 Video URL:
-[Include the YouTube video link here]
+[future deliverable]
 
 Instructions:
 1. Run the scripts in the following order:
