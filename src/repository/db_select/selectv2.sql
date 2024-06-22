@@ -23,3 +23,10 @@ SELECT rt.TableID, t.TableNumber, t.SeatingCapacity
 FROM ReservationTable rt
          JOIN RestaurantTable t ON rt.TableID = t.TableID
 WHERE rt.ReservationID = 1;
+
+-- Query to find all staff assignments with their time for a specific date
+SELECT sa.StaffID, s.FirstName, s.LastName, sa.TableID, t.TableNumber, sa.Date, sa.Time
+FROM StaffAssignment sa
+         JOIN Staff s ON sa.StaffID = s.StaffID
+         JOIN RestaurantTable t ON sa.TableID = t.TableID
+WHERE sa.Date = '2024-06-15';

@@ -57,7 +57,7 @@ CREATE TABLE StaffAssignment (
                                  StaffID INT,
                                  TableID INT,
                                  Date DATE NOT NULL,
-                                 Shift VARCHAR(255) NOT NULL,
+                                 Time TIME NOT NULL,
                                  FOREIGN KEY (StaffID) REFERENCES Staff(StaffID),
                                  FOREIGN KEY (TableID) REFERENCES RestaurantTable(TableID)
 );
