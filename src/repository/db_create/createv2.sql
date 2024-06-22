@@ -32,16 +32,23 @@ CREATE TABLE Staff (
                        Address VARCHAR(255)
 );
 
--- Create Reservation table to represent the relationship between Customer and Table
+-- Create Reservation table
 CREATE TABLE Reservation (
                              ReservationID INT PRIMARY KEY AUTO_INCREMENT,
                              CustomerID INT,
-                             TableID INT,
                              Date DATE NOT NULL,
                              Time TIME NOT NULL,
                              NumberOfPeople INT NOT NULL,
-                             FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
-                             FOREIGN KEY (TableID) REFERENCES RestaurantTable(TableID)
+                             FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+);
+
+-- Create ReservationTable junction table to represent the relationship between Reservation and Table
+CREATE TABLE ReservationTable (
+                                  ReservationID INT,
+                                  TableID INT,
+                                  PRIMARY KEY (ReservationID, TableID),
+                                  FOREIGN KEY (ReservationID) REFERENCES Reservation(ReservationID),
+                                  FOREIGN KEY (TableID) REFERENCES RestaurantTable(TableID)
 );
 
 -- Create StaffAssignment table to represent the relationship between Staff and Table

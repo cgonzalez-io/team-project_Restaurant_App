@@ -17,10 +17,17 @@ INSERT INTO Staff (FirstName, LastName, Role, PhoneNumber, Email, Address) VALUE
                                                                                ('Carol', 'White', 'Manager', '3333333333', 'carol@example.com', '987 Cedar St');
 
 -- Insert sample data into Reservation table
-INSERT INTO Reservation (CustomerID, TableID, Date, Time, NumberOfPeople) VALUES
-                                                                              (1, 1, '2024-06-15', '18:00:00', 4),
-                                                                              (2, 2, '2024-06-16', '19:00:00', 2),
-                                                                              (3, 3, '2024-06-17', '20:00:00', 6);
+INSERT INTO Reservation (CustomerID, Date, Time, NumberOfPeople) VALUES
+                                                                     (1, '2024-06-15', '18:00:00', 4),
+                                                                     (2, '2024-06-16', '19:00:00', 2),
+                                                                     (3, '2024-06-17', '20:00:00', 6);
+
+-- Insert sample data into ReservationTable junction table
+INSERT INTO ReservationTable (ReservationID, TableID) VALUES
+                                                          (1, 1),
+                                                          (1, 2),
+                                                          (2, 2),
+                                                          (3, 3);
 
 -- Insert sample data into StaffAssignment table
 INSERT INTO StaffAssignment (StaffID, TableID, Date, Shift) VALUES
