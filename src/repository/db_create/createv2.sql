@@ -1,5 +1,5 @@
 -- Create the database
-CREATE DATABASE RestaurantDB collate utf8mb4_0900_ai_ci;
+CREATE DATABASE RestaurantDB;
 
 -- Use the created database
 USE RestaurantDB;
@@ -9,7 +9,6 @@ CREATE TABLE Customer (
                           CustomerID INT PRIMARY KEY AUTO_INCREMENT,
                           FirstName VARCHAR(255) NOT NULL,
                           LastName VARCHAR(255) NOT NULL,
-                          ContactDetails VARCHAR(255) NOT NULL,
                           PhoneNumber VARCHAR(20),
                           Email VARCHAR(255),
                           Address VARCHAR(255)
@@ -28,13 +27,12 @@ CREATE TABLE Staff (
                        FirstName VARCHAR(255) NOT NULL,
                        LastName VARCHAR(255) NOT NULL,
                        Role VARCHAR(255) NOT NULL,
-                       ContactDetails VARCHAR(255) NOT NULL,
                        PhoneNumber VARCHAR(20),
                        Email VARCHAR(255),
                        Address VARCHAR(255)
 );
 
--- Create Reservation table
+-- Create Reservation table to represent the relationship between Customer and Table
 CREATE TABLE Reservation (
                              ReservationID INT PRIMARY KEY AUTO_INCREMENT,
                              CustomerID INT,
@@ -46,7 +44,7 @@ CREATE TABLE Reservation (
                              FOREIGN KEY (TableID) REFERENCES RestaurantTable(TableID)
 );
 
--- Create StaffAssignment table
+-- Create StaffAssignment table to represent the relationship between Staff and Table
 CREATE TABLE StaffAssignment (
                                  AssignmentID INT PRIMARY KEY AUTO_INCREMENT,
                                  StaffID INT,

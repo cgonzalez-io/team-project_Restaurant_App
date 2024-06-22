@@ -1,8 +1,8 @@
 -- Insert sample data into Customer table
-INSERT INTO Customer (FirstName, LastName, ContactDetails, PhoneNumber, Email, Address) VALUES
-                                                                                            ('John', 'Doe', 'john@example.com', '1234567890', 'john@example.com', '123 Main St'),
-                                                                                            ('Jane', 'Smith', 'jane@example.com', '0987654321', 'jane@example.com', '456 Oak St'),
-                                                                                            ('Michael', 'Brown', 'michael@example.com', '5555555555', 'michael@example.com', '789 Pine St');
+INSERT INTO Customer (FirstName, LastName, PhoneNumber, Email, Address) VALUES
+                                                                            ('John', 'Doe', '1234567890', 'john@example.com', '123 Main St'),
+                                                                            ('Jane', 'Smith', '0987654321', 'jane@example.com', '456 Oak St'),
+                                                                            ('Michael', 'Brown', '5555555555', 'michael@example.com', '789 Pine St');
 
 -- Insert sample data into RestaurantTable table
 INSERT INTO RestaurantTable (TableNumber, SeatingCapacity) VALUES
@@ -11,10 +11,10 @@ INSERT INTO RestaurantTable (TableNumber, SeatingCapacity) VALUES
                                                                (3, 6);
 
 -- Insert sample data into Staff table
-INSERT INTO Staff (FirstName, LastName, Role, ContactDetails, PhoneNumber, Email, Address) VALUES
-                                                                                               ('Alice', 'Johnson', 'Waiter', 'alice@example.com', '1111111111', 'alice@example.com', '321 Elm St'),
-                                                                                               ('Bob', 'Lee', 'Chef', 'bob@example.com', '2222222222', 'bob@example.com', '654 Spruce St'),
-                                                                                               ('Carol', 'White', 'Manager', 'carol@example.com', '3333333333', 'carol@example.com', '987 Cedar St');
+INSERT INTO Staff (FirstName, LastName, Role, PhoneNumber, Email, Address) VALUES
+                                                                               ('Alice', 'Johnson', 'Waiter', '1111111111', 'alice@example.com', '321 Elm St'),
+                                                                               ('Bob', 'Lee', 'Chef', '2222222222', 'bob@example.com', '654 Spruce St'),
+                                                                               ('Carol', 'White', 'Manager', '3333333333', 'carol@example.com', '987 Cedar St');
 
 -- Insert sample data into Reservation table
 INSERT INTO Reservation (CustomerID, TableID, Date, Time, NumberOfPeople) VALUES
