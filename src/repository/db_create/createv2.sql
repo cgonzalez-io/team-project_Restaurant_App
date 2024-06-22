@@ -1,5 +1,5 @@
 -- Create the database
-CREATE DATABASE RestaurantDB;
+CREATE SCHEMA IF NOT EXISTS RestaurantDB;
 
 -- Use the created database
 USE RestaurantDB;
