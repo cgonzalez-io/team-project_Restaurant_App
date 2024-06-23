@@ -13,7 +13,7 @@ public class ReservationManager {
     private static Scanner scan = new Scanner(System.in);
     private static ReservationRepository reservationRepository = new ReservationRepositoryImpl();
 
-    public static void main(String[] args) {
+    public void showMenu(){
         String choice = "";
 
         do {
@@ -69,18 +69,17 @@ public class ReservationManager {
 
     private static void insert() throws SQLException {
         System.out.println(
-            "Enter reservation ID, customer ID, table ID, date (yyyy-mm-dd), time (hh:mm:ss), and number of people:"
+            "Enter reservation ID, customer ID,number of people, time (hh:mm:ss), and date (yyyy-mm-dd):"
         );
 
         int reservationID = scan.nextInt();
         int customerID = scan.nextInt();
-        int tableID = scan.nextInt();
-        Date date = Date.valueOf(scan.next());
-        Time time = Time.valueOf(scan.next());
         int numberOfPeople = scan.nextInt();
+        Time time = Time.valueOf(scan.next());
+        Date date = Date.valueOf(scan.next());
         scan.nextLine(); // consume newline
 
-        Reservation reservation = new Reservation(reservationID, customerID, tableID, date, time, numberOfPeople);
+        Reservation reservation = new Reservation(reservationID, customerID, numberOfPeople, time, date);
         reservationRepository.insert(reservation);
     }
 
@@ -90,19 +89,19 @@ public class ReservationManager {
         scan.nextLine(); // consume newline
 
         System.out.println(
-            "Enter new customer ID, table ID, date (yyyy-mm-dd), time (hh:mm:ss), and number of people:"
+            "Enter new customer ID, date (yyyy-mm-dd), time (hh:mm:ss), and number of people:"
         );
 
         int customerID = scan.nextInt();
-        int tableID = scan.nextInt();
         Date date = Date.valueOf(scan.next());
         Time time = Time.valueOf(scan.next());
         int numberOfPeople = scan.nextInt();
         scan.nextLine(); // consume newline
 
-        Reservation reservation = new Reservation(reservationID, customerID, tableID, date, time, numberOfPeople);
+        Reservation reservation = new Reservation(reservationID, customerID, numberOfPeople, time, date);
         reservationRepository.update(reservation);
     }
+
 
     private static void searchReservation(int reservationID) throws SQLException {
         Reservation reservation = reservationRepository.findById(reservationID);

@@ -10,17 +10,15 @@ public class Reservation {
 
     private int reservationID;
     private int customerID;
-    private int tableID;
     private Date date;
     private Time time;
     private int numberOfPeople;
     private Reservation next;
 
     // Constructors
-    public Reservation(int reservationID, int customerID, int tableID, Date date, Time time, int numberOfPeople) {
+    public Reservation(int reservationID, int customerID, int numberOfPeople, Time time, Date date) {
         this.reservationID = reservationID;
         this.customerID = customerID;
-        this.tableID = tableID;
         this.date = date;
         this.time = time;
         this.numberOfPeople = numberOfPeople;
@@ -43,13 +41,6 @@ public class Reservation {
         this.customerID = customerID;
     }
 
-    public int getTableID() {
-        return tableID;
-    }
-
-    public void setTableID(int tableID) {
-        this.tableID = tableID;
-    }
 
     public Date getDate() {
         return date;
@@ -91,9 +82,7 @@ public class Reservation {
             reservationID +
             ", customerID=" +
             customerID +
-            ", tableID=" +
-            tableID +
-            ", date=" +
+                ", date=" +
             date +
             ", time=" +
             time +
