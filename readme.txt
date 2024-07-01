@@ -1,6 +1,6 @@
 Restaurant Reservation System - Team 9
 //TODO: look into using the test data generator python package to generate test data for the database.
-
+//TODO: Add PMD and Docker to the project.
 1. Use npm install to install the dependencies for the project.
 2. pull the docker image from the docker hub using the command docker pull mysql:latest
 https://hub.docker.com/_/mysql refer to this link for more information on the mysql docker image.
