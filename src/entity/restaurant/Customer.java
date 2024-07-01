@@ -1,43 +1,48 @@
 package entity.restaurant;
 
+import entity.ContactNode;
+import java.util.Objects;
+
 /**
- * The Customer class represents a customer object with their unique ID, name, and contact details.
+ * The Customer class represents a customer in a system.
+ * It contains information such as customer ID, first name, last name,
+ * contact number, email address, and address.
  */
-public class Customer {
+public class Customer extends ContactNode {
 
-    private int customerID;
-    private String name;
-    private String contactDetails;
+    private int customerID;//primary key
 
-    // Constructors
-    public Customer(int customerID, String name, String contactDetails) {
-        this.customerID = customerID;
-        this.name = name;
-        this.contactDetails = contactDetails;
+    public Customer() {
+        super();
+        customerID = 0;
     }
-
-    // Getters and Setters
-    public int getCustomerID() {
-        return customerID;
-    }
-
-    public void setCustomerID(int customerID) {
+    public Customer (int customerID, String firstName, String lastName, int phone, String email, String address, ContactNode next) {
+        super(firstName, lastName, phone, email, address, next);
         this.customerID = customerID;
     }
-
-    public String getName() {
-        return name;
+    @Override
+    public String toString() {
+        return "Customer{" +
+            "customerId=" + customerID +
+            ", name='" + getName() + '\'' +
+            ", firstName='" + getFirstName() + '\'' +
+            ", lastName='" + getLastName() + '\'' +
+            ", phone=" + getPhone() +
+            ", email='" + getEmail() + '\'' +
+            ", address='" + getAddress() + '\'' +
+            ", next=" + getNext() +
+            '}';
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Customer that)) return false;
+        if (!super.equals(o)) return false;
+        return customerID == that.customerID;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContactDetails() {
-        return contactDetails;
-    }
-
-    public void setContactDetails(String contactDetails) {
-        this.contactDetails = contactDetails;
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), customerID);
     }
 }

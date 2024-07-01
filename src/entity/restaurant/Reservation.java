@@ -2,9 +2,12 @@ package entity.restaurant;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.Objects;
 
 /**
- * The Reservation class represents a reservation object with their unique ID, customer ID, table ID, date, time, and number of people.
+ * The Reservation class represents a reservation in a restaurant.
+ * It contains information such as reservation ID, customer ID, table ID,
+ * date, time, and number of people.
  */
 public class Reservation {
 
@@ -24,6 +27,34 @@ public class Reservation {
         this.date = date;
         this.time = time;
         this.numberOfPeople = numberOfPeople;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Reservation that)) return false;
+        return (
+            getReservationID() == that.getReservationID() &&
+            getCustomerID() == that.getCustomerID() &&
+            getTableID() == that.getTableID() &&
+            getNumberOfPeople() == that.getNumberOfPeople() &&
+            Objects.equals(getDate(), that.getDate()) &&
+            Objects.equals(getTime(), that.getTime()) &&
+            Objects.equals(getNext(), that.getNext())
+        );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+            getReservationID(),
+            getCustomerID(),
+            getTableID(),
+            getDate(),
+            getTime(),
+            getNumberOfPeople(),
+            getNext()
+        );
     }
 
     // Getters and Setters

@@ -2,9 +2,11 @@ package entity.restaurant;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.Objects;
 
 /**
- * The StaffAssignment class represents a staff assignment object with their unique ID, staff ID, table ID, date, and time.
+ * The StaffAssignment class represents a staff assignment in a restaurant.
+ * It contains information such as assignment ID, staff ID, table ID, date, and time.
  */
 public class StaffAssignment {
 
@@ -21,6 +23,42 @@ public class StaffAssignment {
         this.tableID = tableID;
         this.date = date;
         this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return (
+            "StaffAssignment{" +
+            "assignmentID=" +
+            assignmentID +
+            ", staffID=" +
+            staffID +
+            ", tableID=" +
+            tableID +
+            ", date=" +
+            date +
+            ", time=" +
+            time +
+            '}'
+        );
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof StaffAssignment that)) return false;
+        return (
+            getAssignmentID() == that.getAssignmentID() &&
+            getStaffID() == that.getStaffID() &&
+            getTableID() == that.getTableID() &&
+            Objects.equals(getDate(), that.getDate()) &&
+            Objects.equals(getTime(), that.getTime())
+        );
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getAssignmentID(), getStaffID(), getTableID(), getDate(), getTime());
     }
 
     // Getters and Setters
