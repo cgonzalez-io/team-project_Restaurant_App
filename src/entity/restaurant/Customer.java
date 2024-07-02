@@ -10,29 +10,63 @@ import java.util.Objects;
  */
 public class Customer extends ContactNode {
 
-    private int customerID;//primary key
+    private int customerID; //primary key
 
     public Customer() {
         super();
         customerID = 0;
     }
-    public Customer (int customerID, String firstName, String lastName, int phone, String email, String address, ContactNode next) {
+
+    public Customer(
+        int customerID,
+        String firstName,
+        String lastName,
+        int phone,
+        String email,
+        String address,
+        ContactNode next
+    ) {
         super(firstName, lastName, phone, email, address, next);
         this.customerID = customerID;
     }
+
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
+    }
+
     @Override
     public String toString() {
-        return "Customer{" +
-            "customerId=" + customerID +
-            ", name='" + getName() + '\'' +
-            ", firstName='" + getFirstName() + '\'' +
-            ", lastName='" + getLastName() + '\'' +
-            ", phone=" + getPhone() +
-            ", email='" + getEmail() + '\'' +
-            ", address='" + getAddress() + '\'' +
-            ", next=" + getNext() +
-            '}';
+        return (
+            "Customer{" +
+            "customerId=" +
+            customerID +
+            ", name='" +
+            getName() +
+            '\'' +
+            ", firstName='" +
+            getFirstName() +
+            '\'' +
+            ", lastName='" +
+            getLastName() +
+            '\'' +
+            ", phone=" +
+            getPhone() +
+            ", email='" +
+            getEmail() +
+            '\'' +
+            ", address='" +
+            getAddress() +
+            '\'' +
+            ", next=" +
+            getNext() +
+            '}'
+        );
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
