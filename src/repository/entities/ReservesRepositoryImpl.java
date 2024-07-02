@@ -60,7 +60,7 @@ public class ReservesRepositoryImpl implements ReservesRepository{
 
     @Override
     public List<ReservationTable> findAll() throws SQLException {
-        String sql = "SELECT * FROM Reserves";
+        String sql = "SELECT * FROM RESERVES";
         List<ReservationTable> reserves = new ArrayList<>();
 
         try (

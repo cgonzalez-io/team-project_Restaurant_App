@@ -68,8 +68,8 @@ public class ReservesManager {
         System.out.println("Enter reservation ID and table ID:");
 
         try {
-            int reservationID = Integer.parseInt(scan.next());
-            int tableID = Integer.parseInt(scan.next());
+            int reservationID = Integer.parseInt(scan.nextLine());
+            int tableID = Integer.parseInt(scan.nextLine());
             ReservationTable reserve = new ReservationTable(reservationID, tableID);
             reservesRepository.insert(reserve);
             System.out.println("Reservation table inserted successfully.");
@@ -82,9 +82,9 @@ public class ReservesManager {
     private static void update() throws SQLException {
         System.out.println("Enter reservation ID to update:");
         try {
-            int reservationID = Integer.parseInt(scan.next());
+            int reservationID = Integer.parseInt(scan.nextLine());
             System.out.println("Enter new table ID:");
-            int tableID = Integer.parseInt(scan.next());
+            int tableID = Integer.parseInt(scan.nextLine());
             ReservationTable reserve = new ReservationTable(reservationID, tableID);
             reservesRepository.update(reserve);
             System.out.println("Reservation table updated successfully.");
@@ -98,8 +98,8 @@ public class ReservesManager {
         System.out.println("Enter reservation ID and table ID to delete:");
 
         try {
-            int reservationID = Integer.parseInt(scan.next());
-            int tableID = Integer.parseInt(scan.next());
+            int reservationID = Integer.parseInt(scan.nextLine());
+            int tableID = Integer.parseInt(scan.nextLine());
             reservesRepository.delete(reservationID, tableID);
             System.out.println("Reservation table deleted successfully.");
         } catch (NumberFormatException e) {
@@ -112,8 +112,8 @@ public class ReservesManager {
         System.out.println("Enter reservation ID and table ID to search:");
 
         try {
-            int reservationID = Integer.parseInt(scan.next());
-            int tableID = Integer.parseInt(scan.next());
+            int reservationID = Integer.parseInt(scan.nextLine());
+            int tableID = Integer.parseInt(scan.nextLine());
             ReservationTable reserve = reservesRepository.findById(reservationID, tableID);
             if (reserve != null) {
                 System.out.println(reserve);
