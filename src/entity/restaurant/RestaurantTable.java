@@ -16,15 +16,6 @@ public class RestaurantTable {
         this.seatingCapacity = seatingCapacity;
     }
 
-    @Override
-    public String toString() {
-        return "RestaurantTable{" +
-            "tableID=" + tableID +
-            ", tableNumber=" + tableNumber +
-            ", seatingCapacity=" + seatingCapacity +
-            '}';
-    }
-
     // Getters and Setters
     public int getTableID() {
         return tableID;

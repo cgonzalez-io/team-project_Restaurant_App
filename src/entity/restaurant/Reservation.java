@@ -2,59 +2,26 @@ package entity.restaurant;
 
 import java.sql.Date;
 import java.sql.Time;
-import java.util.Objects;
 
 /**
- * The Reservation class represents a reservation in a restaurant.
- * It contains information such as reservation ID, customer ID, table ID,
- * date, time, and number of people.
+ * The Reservation class represents a reservation object with their unique ID, customer ID, table ID, date, time, and number of people.
  */
 public class Reservation {
 
     private int reservationID;
     private int customerID;
-    private int tableID;
     private Date date;
     private Time time;
     private int numberOfPeople;
     private Reservation next;
 
     // Constructors
-    public Reservation(int reservationID, int customerID, int tableID, Date date, Time time, int numberOfPeople) {
+    public Reservation(int reservationID, int customerID, int numberOfPeople, Time time, Date date) {
         this.reservationID = reservationID;
         this.customerID = customerID;
-        this.tableID = tableID;
         this.date = date;
         this.time = time;
         this.numberOfPeople = numberOfPeople;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Reservation that)) return false;
-        return (
-            getReservationID() == that.getReservationID() &&
-            getCustomerID() == that.getCustomerID() &&
-            getTableID() == that.getTableID() &&
-            getNumberOfPeople() == that.getNumberOfPeople() &&
-            Objects.equals(getDate(), that.getDate()) &&
-            Objects.equals(getTime(), that.getTime()) &&
-            Objects.equals(getNext(), that.getNext())
-        );
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(
-            getReservationID(),
-            getCustomerID(),
-            getTableID(),
-            getDate(),
-            getTime(),
-            getNumberOfPeople(),
-            getNext()
-        );
     }
 
     // Getters and Setters
@@ -74,13 +41,6 @@ public class Reservation {
         this.customerID = customerID;
     }
 
-    public int getTableID() {
-        return tableID;
-    }
-
-    public void setTableID(int tableID) {
-        this.tableID = tableID;
-    }
 
     public Date getDate() {
         return date;
@@ -122,9 +82,7 @@ public class Reservation {
             reservationID +
             ", customerID=" +
             customerID +
-            ", tableID=" +
-            tableID +
-            ", date=" +
+                ", date=" +
             date +
             ", time=" +
             time +

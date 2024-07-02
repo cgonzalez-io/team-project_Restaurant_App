@@ -1,48 +1,86 @@
 package entity.restaurant;
 
-import entity.ContactNode;
-import java.util.Objects;
-
 /**
- * The Customer class represents a customer in a system.
- * It contains information such as customer ID, first name, last name,
- * contact number, email address, and address.
+ * The Customer class represents a customer object with their unique ID, name, and contact details.
  */
-public class Customer extends ContactNode {
+public class Customer {
 
-    private int customerID;//primary key
+    private int customerID;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+    private String email;
+    private String address;
 
-    public Customer() {
-        super();
-        customerID = 0;
+
+    // Constructors
+    public Customer(int customerID, String firstName, String lastName, String phoneNumber, String email, String address) {
+        this.customerID = customerID;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.address = address;
     }
-    public Customer (int customerID, String firstName, String lastName, int phone, String email, String address, ContactNode next) {
-        super(firstName, lastName, phone, email, address, next);
+
+    // Getters and Setters
+    public int getCustomerID() {
+        return customerID;
+    }
+
+    public void setCustomerID(int customerID) {
         this.customerID = customerID;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     @Override
     public String toString() {
         return "Customer{" +
-            "customerId=" + customerID +
-            ", name='" + getName() + '\'' +
-            ", firstName='" + getFirstName() + '\'' +
-            ", lastName='" + getLastName() + '\'' +
-            ", phone=" + getPhone() +
-            ", email='" + getEmail() + '\'' +
-            ", address='" + getAddress() + '\'' +
-            ", next=" + getNext() +
+            "customerID=" + customerID +
+            ", firstName='" + firstName + '\'' +
+            ", lastName='" + lastName + '\'' +
+            ", phoneNumber='" + phoneNumber + '\'' +
+            ", email='" + email + '\'' +
+            ", address='" + address + '\'' +
             '}';
-    }
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Customer that)) return false;
-        if (!super.equals(o)) return false;
-        return customerID == that.customerID;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), customerID);
     }
 }

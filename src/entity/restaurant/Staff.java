@@ -1,45 +1,38 @@
 package entity.restaurant;
 
-import entity.ContactNode;
-import java.util.Objects;
-
 /**
- * The Staff class represents a staff member in a restaurant.
- * It contains information such as staff ID, first name, last name,
- * contact number, email address, address, and role.
+ * The Staff class represents a staff object with their unique ID, name, role, and contact details.
  */
-public class Staff extends ContactNode {
+public class Staff {
 
     private int staffID;
+    private String name;
     private String role;
+    private String contactDetails;
 
-    public Staff() {
-        super();
-        this.staffID = 0;
-        this.role = "";
-    }
-
-    public Staff(
-        int staffId,
-        String firstName,
-        String lastName,
-        int phone,
-        String email,
-        String address,
-        String role,
-        ContactNode next
-    ) {
-        super(firstName, lastName, phone, email, address, next);
-        this.staffID = staffId;
+    // Constructors
+    public Staff(int staffID, String name, String role, String contactDetails) {
+        this.staffID = staffID;
+        this.name = name;
         this.role = role;
+        this.contactDetails = contactDetails;
     }
 
-    public int getStaffId() {
+    // Getters and Setters
+    public int getStaffID() {
         return staffID;
     }
 
-    public void setStaffId(int staffId) {
-        this.staffID = staffId;
+    public void setStaffID(int staffID) {
+        this.staffID = staffID;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getRole() {
@@ -50,48 +43,11 @@ public class Staff extends ContactNode {
         this.role = role;
     }
 
-    @Override
-    public String toString() {
-        return (
-            "Staff{" +
-            "staffId=" +
-            staffID +
-            ", role='" +
-            role +
-            '\'' +
-            ", name='" +
-            getName() +
-            '\'' +
-            ", firstName='" +
-            getFirstName() +
-            '\'' +
-            ", lastName='" +
-            getLastName() +
-            '\'' +
-            ", phone=" +
-            getPhone() +
-            ", email='" +
-            getEmail() +
-            '\'' +
-            ", address='" +
-            getAddress() +
-            '\'' +
-            ", next=" +
-            getNext() +
-            '}'
-        );
+    public String getContactDetails() {
+        return contactDetails;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Staff that)) return false;
-        if (!super.equals(o)) return false;
-        return staffID == that.staffID && Objects.equals(role, that.role);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), staffID, role);
+    public void setContactDetails(String contactDetails) {
+        this.contactDetails = contactDetails;
     }
 }

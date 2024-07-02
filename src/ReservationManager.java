@@ -5,15 +5,20 @@ import java.sql.Time;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
+
+import entity.restaurant.RestaurantTable;
 import repository.entities.ReservationRepositoryImpl;
+import repository.entities.RestaurantTableRepositoryImpl;
 import repository.entities.interfaces.ReservationRepository;
+import repository.entities.interfaces.RestaurantTableRepository;
 
 public class ReservationManager {
 
     private static Scanner scan = new Scanner(System.in);
     private static ReservationRepository reservationRepository = new ReservationRepositoryImpl();
+    private static RestaurantTableRepository tableRepository = new RestaurantTableRepositoryImpl();
 
-    public static void main(String[] args) {
+    public void showMenu() {
         String choice = "";
 
         do {
@@ -23,6 +28,7 @@ public class ReservationManager {
             System.out.println("\td: delete a reservation\n");
             System.out.println("\ts: search for a reservation\n");
             System.out.println("\tp: print all reservations\n");
+            System.out.println("\tt: print all tables\n");
             System.out.println("\tq: quit \n");
             choice = scan.nextLine();
             branching(choice);
@@ -44,11 +50,14 @@ public class ReservationManager {
                 case "s":
                     System.out.println("Please enter the reservation ID to be searched for:\n");
                     int reservationID = scan.nextInt();
-                    scan.nextLine(); // consume newline
+                    scan.nextLine();
                     searchReservation(reservationID);
                     break;
                 case "p":
                     printAll();
+                    break;
+                case "t":
+                    printAllTables();
                     break;
                 default:
                     System.out.println("Invalid input\n");
@@ -69,40 +78,39 @@ public class ReservationManager {
 
     private static void insert() throws SQLException {
         System.out.println(
-            "Enter reservation ID, customer ID, table ID, date (yyyy-mm-dd), time (hh:mm:ss), and number of people:"
+            "Enter reservation ID, customer ID,number of people, time (hh:mm:ss), and date (yyyy-mm-dd):"
         );
 
         int reservationID = scan.nextInt();
         int customerID = scan.nextInt();
-        int tableID = scan.nextInt();
-        Date date = Date.valueOf(scan.next());
-        Time time = Time.valueOf(scan.next());
         int numberOfPeople = scan.nextInt();
-        scan.nextLine(); // consume newline
+        Time time = Time.valueOf(scan.next());
+        Date date = Date.valueOf(scan.next());
+        scan.nextLine();
 
-        Reservation reservation = new Reservation(reservationID, customerID, tableID, date, time, numberOfPeople);
+        Reservation reservation = new Reservation(reservationID, customerID, numberOfPeople, time, date);
         reservationRepository.insert(reservation);
     }
 
     private static void update() throws SQLException {
         System.out.println("Enter the reservation ID to update:");
         int reservationID = scan.nextInt();
-        scan.nextLine(); // consume newline
+        scan.nextLine();
 
         System.out.println(
-            "Enter new customer ID, table ID, date (yyyy-mm-dd), time (hh:mm:ss), and number of people:"
+            "Enter new customer ID, date (yyyy-mm-dd), time (hh:mm:ss), and number of people:"
         );
 
         int customerID = scan.nextInt();
-        int tableID = scan.nextInt();
         Date date = Date.valueOf(scan.next());
         Time time = Time.valueOf(scan.next());
         int numberOfPeople = scan.nextInt();
-        scan.nextLine(); // consume newline
+        scan.nextLine();
 
-        Reservation reservation = new Reservation(reservationID, customerID, tableID, date, time, numberOfPeople);
+        Reservation reservation = new Reservation(reservationID, customerID, numberOfPeople, time, date);
         reservationRepository.update(reservation);
     }
+
 
     private static void searchReservation(int reservationID) throws SQLException {
         Reservation reservation = reservationRepository.findById(reservationID);
@@ -116,8 +124,14 @@ public class ReservationManager {
     private static void deleteReservation() throws SQLException {
         System.out.println("Enter the reservation ID to delete:");
         int reservationID = scan.nextInt();
-        scan.nextLine(); // consume newline
+        scan.nextLine(); 
 
         reservationRepository.delete(reservationID);
+    }
+    private static void printAllTables() throws SQLException {
+        List<RestaurantTable> tables = tableRepository.findAll();
+        for (RestaurantTable table : tables) {
+            System.out.println(table);
+        }
     }
 }
