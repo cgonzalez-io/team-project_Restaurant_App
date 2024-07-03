@@ -64,8 +64,8 @@ public class ReservationManager {
   }
 
   private static void insert() throws SQLException {
-    System.out.println("Enter reservation ID, customer ID,number of people, " +
-                       "time (hh:mm:ss), and date (yyyy-mm-dd):");
+    System.out.println("Enter reservation ID, customer ID,number of people, "
+                       + "time (hh:mm:ss), and date (yyyy-mm-dd):");
 
     int reservationID = scan.nextInt();
     int customerID = scan.nextInt();
@@ -84,8 +84,8 @@ public class ReservationManager {
     int reservationID = scan.nextInt();
     scan.nextLine();
 
-    System.out.println("Enter new customer ID, date (yyyy-mm-dd), time " +
-                       "(hh:mm:ss), and number of people:");
+    System.out.println("Enter new customer ID, date (yyyy-mm-dd), time "
+                       + "(hh:mm:ss), and number of people:");
 
     int customerID = scan.nextInt();
     Date date = Date.valueOf(scan.next());

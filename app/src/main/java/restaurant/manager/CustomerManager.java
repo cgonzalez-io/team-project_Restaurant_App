@@ -70,8 +70,8 @@ public class CustomerManager {
   }
 
   private static void insert() throws SQLException {
-    System.out.println("Enter customer ID, first name, last name, phone " +
-                       "number, email, and address:");
+    System.out.println("Enter customer ID, first name, last name, phone "
+                       + "number, email, and address:");
 
     int customerID = scan.nextInt();
     String firstName = scan.next();

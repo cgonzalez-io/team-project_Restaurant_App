@@ -99,11 +99,11 @@ class CustomerTest {
         new Customer(1, "John", "Smith", 987654321, "john.smith@example.com",
                      "456 Elm St", nextNode);
     String expected =
-        "Customer{customerId=1, name='John Smith', firstName='John', " +
-        "lastName='Smith', phone=987654321, email='john.smith@example.com', " +
-        "address='456 Elm St', next=ContactNode{name='Jane Doe', " +
-        "firstName='Jane', lastName='Doe', phone=1234567890, " +
-        "email='jane.doe@example.com', address='123 Main St', next=null}}";
+        "Customer{customerId=1, name='John Smith', firstName='John', "
+        + "lastName='Smith', phone=987654321, email='john.smith@example.com', "
+        + "address='456 Elm St', next=ContactNode{name='Jane Doe', "
+        + "firstName='Jane', lastName='Doe', phone=1234567890, "
+        + "email='jane.doe@example.com', address='123 Main St', next=null}}";
     assertEquals(expected, customer.toString());
   }
 

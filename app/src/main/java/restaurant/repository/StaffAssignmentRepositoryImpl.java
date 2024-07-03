@@ -17,8 +17,8 @@ public class StaffAssignmentRepositoryImpl
 
   @Override
   public void insert(StaffAssignment staffAssignment) throws SQLException {
-    String sql = "INSERT INTO StaffAssignment (StaffID, TableID, Date, Time) " +
-                 "VALUES (?, ?, ?, ?)";
+    String sql = "INSERT INTO StaffAssignment (StaffID, TableID, Date, Time) "
+                 + "VALUES (?, ?, ?, ?)";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt =
              conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -38,8 +38,8 @@ public class StaffAssignmentRepositoryImpl
 
   @Override
   public void update(StaffAssignment staffAssignment) throws SQLException {
-    String sql = "UPDATE StaffAssignment SET StaffID = ?, TableID = ?, Date " +
-                 "= ?, Time = ? WHERE AssignmentID = ?";
+    String sql = "UPDATE StaffAssignment SET StaffID = ?, TableID = ?, Date "
+                 + "= ?, Time = ? WHERE AssignmentID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, staffAssignment.getStaffID());

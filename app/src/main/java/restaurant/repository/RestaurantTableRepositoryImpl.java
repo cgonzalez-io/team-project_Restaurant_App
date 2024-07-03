@@ -12,8 +12,8 @@ public class RestaurantTableRepositoryImpl
 
   @Override
   public void insert(RestaurantTable table) throws SQLException {
-    String sql = "INSERT INTO RESTAURANTTABLE (TableID, TableNumber, " +
-                 "SeatingCapacity) VALUES (?, ?, ?)";
+    String sql = "INSERT INTO RESTAURANTTABLE (TableID, TableNumber, "
+                 + "SeatingCapacity) VALUES (?, ?, ?)";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, table.getTableID());
@@ -25,8 +25,8 @@ public class RestaurantTableRepositoryImpl
 
   @Override
   public void update(RestaurantTable table) throws SQLException {
-    String sql = "UPDATE RESTAURANTTABLE SET TableNumber = ?, " +
-                 "SeatingCapacity = ? WHERE TableID = ?";
+    String sql = "UPDATE RESTAURANTTABLE SET TableNumber = ?, "
+                 + "SeatingCapacity = ? WHERE TableID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, table.getTableNumber());
