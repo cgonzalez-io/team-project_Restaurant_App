@@ -26,12 +26,12 @@ class CustomerTest {
     @Test
     public void unit_test_initializes_customer_with_valid_inputs() {
         ContactNode nextNode = new ContactNode("Jane", "Doe", 1234567890, "jane.doe@example.com", "123 Main St", null);
-        Customer customer = new Customer(1, "John", "Doe", 9876543210, "john.doe@example.com", "456 Elm St", nextNode);
+        Customer customer = new Customer(1, "John", "Doe", 9876543210L, "john.doe@example.com", "456 Elm St", nextNode);
 
         assertEquals(1, customer.getCustomerID());
         assertEquals("John", customer.getFirstName());
         assertEquals("Doe", customer.getLastName());
-        assertEquals(9876543210, customer.getPhone());
+        assertEquals(9876543210L, customer.getPhone());
         assertEquals("john.doe@example.com", customer.getEmail());
         assertEquals("456 Elm St", customer.getAddress());
         assertEquals(nextNode, customer.getNext());
@@ -40,12 +40,12 @@ class CustomerTest {
     @Test
     public void unit_test_initializes_customer_with_customerID_zero() {
         ContactNode nextNode = new ContactNode("Jane", "Doe", 1234567890, "jane.doe@example.com", "123 Main St", null);
-        Customer customer = new Customer(0, "John", "Doe", 9876543210, "john.doe@example.com", "456 Elm St", nextNode);
+        Customer customer = new Customer(0, "John", "Doe", 9876543210L, "john.doe@example.com", "456 Elm St", nextNode);
 
         assertEquals(0, customer.getCustomerID());
         assertEquals("John", customer.getFirstName());
         assertEquals("Doe", customer.getLastName());
-        assertEquals(9876543210, customer.getPhone());
+        assertEquals(9876543210L, customer.getPhone());
         assertEquals("john.doe@example.com", customer.getEmail());
         assertEquals("456 Elm St", customer.getAddress());
         assertEquals(nextNode, customer.getNext());
@@ -59,7 +59,7 @@ class CustomerTest {
 
     @Test
     public void unit_test_returns_correct_customerID_when_customerID_is_set_to_zero() {
-        Customer customer = new Customer(0, "Jane", "Doe", 9876543210, "jane.doe@example.com", "456 Elm St", null);
+        Customer customer = new Customer(0, "Jane", "Doe", 9876543210L, "jane.doe@example.com", "456 Elm St", null);
         assertEquals(0, customer.getCustomerID());
     }
 
