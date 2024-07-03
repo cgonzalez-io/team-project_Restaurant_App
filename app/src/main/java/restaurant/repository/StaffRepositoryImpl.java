@@ -11,8 +11,8 @@ public class StaffRepositoryImpl implements StaffRepository {
 
   @Override
   public void insert(Staff staff) throws SQLException {
-    String sql = "INSERT INTO Staff (FirstName, LastName, Role, PhoneNumber, " +
-                 "Email, Address) VALUES (?, ?, ?, ?, ?, ?)";
+    String sql = "INSERT INTO Staff (FirstName, LastName, Role, PhoneNumber, "
+                 + "Email, Address) VALUES (?, ?, ?, ?, ?, ?)";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt =
              conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -34,8 +34,8 @@ public class StaffRepositoryImpl implements StaffRepository {
 
   @Override
   public void update(Staff staff) throws SQLException {
-    String sql = "UPDATE Staff SET FirstName = ?, LastName = ?, Role = ?, " +
-                 "PhoneNumber = ?, Email = ?, Address = ? WHERE StaffID = ?";
+    String sql = "UPDATE Staff SET FirstName = ?, LastName = ?, Role = ?, "
+                 + "PhoneNumber = ?, Email = ?, Address = ? WHERE StaffID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setString(1, staff.getFirstName());

@@ -17,8 +17,8 @@ public class ReservationRepositoryImpl implements ReservationRepository {
   @Override
   public void insert(Reservation reservation) throws SQLException {
     String sql =
-        "INSERT INTO Reservation (reservationID, customerID, tableID, date, " +
-        "time, numberOfPeople) VALUES (?, ?, ?, ?, ?, ?)";
+        "INSERT INTO Reservation (reservationID, customerID, tableID, date, "
+        + "time, numberOfPeople) VALUES (?, ?, ?, ?, ?, ?)";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, reservation.getReservationID());
@@ -32,8 +32,8 @@ public class ReservationRepositoryImpl implements ReservationRepository {
 
   @Override
   public void update(Reservation reservation) throws SQLException {
-    String sql = "UPDATE Reservation SET customerID = ?, tableID = ?, date = " +
-                 "?, time = ?, numberOfPeople = ? WHERE reservationID = ?";
+    String sql = "UPDATE Reservation SET customerID = ?, tableID = ?, date = "
+                 + "?, time = ?, numberOfPeople = ? WHERE reservationID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, reservation.getCustomerID());

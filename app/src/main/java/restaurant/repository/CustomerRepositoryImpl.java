@@ -16,8 +16,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
   @Override
   public void insert(Customer customer) throws SQLException {
-    String sql = "INSERT INTO Customer (FirstName, LastName, PhoneNumber, " +
-                 "Email, Address) VALUES (?, ?, ?, ?, ?)";
+    String sql = "INSERT INTO Customer (FirstName, LastName, PhoneNumber, "
+                 + "Email, Address) VALUES (?, ?, ?, ?, ?)";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt =
              conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -38,7 +38,8 @@ public class CustomerRepositoryImpl implements CustomerRepository {
 
   @Override
   public void update(Customer customer) throws SQLException {
-    String sql = "UPDATE Customer SET FirstName = ?, LastName = ?, " +
+    String sql = "UPDATE Customer SET FirstName = ?, LastName = ?, "
+                 +
                  "PhoneNumber = ?, Email = ?, Address = ? WHERE CustomerID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
