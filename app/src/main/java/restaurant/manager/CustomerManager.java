@@ -76,7 +76,7 @@ public class CustomerManager {
     int customerID = scan.nextInt();
     String firstName = scan.next();
     String lastName = scan.next();
-    int phoneNumber = scan.nextInt();
+    String phoneNumber = scan.next();
     String email = scan.next();
     scan.nextLine();
     String address = scan.nextLine().trim();
@@ -96,7 +96,7 @@ public class CustomerManager {
 
     String firstName = scan.next();
     String lastName = scan.next();
-    int phoneNumber = scan.nextInt();
+    String phoneNumber = scan.next();
     String email = scan.next();
     scan.nextLine();
     String address = scan.nextLine().trim();

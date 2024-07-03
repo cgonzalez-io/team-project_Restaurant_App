@@ -23,7 +23,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
              conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
       pstmt.setString(1, customer.getFirstName());
       pstmt.setString(2, customer.getLastName());
-      pstmt.setLong(3, customer.getPhone());
+      pstmt.setString(3, customer.getPhone());
       pstmt.setString(4, customer.getEmail());
       pstmt.setString(5, customer.getAddress());
       pstmt.executeUpdate();
@@ -45,7 +45,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setString(1, customer.getFirstName());
       pstmt.setString(2, customer.getLastName());
-      pstmt.setLong(3, customer.getPhone());
+      pstmt.setString(3, customer.getPhone());
       pstmt.setString(4, customer.getEmail());
       pstmt.setString(5, customer.getAddress());
       pstmt.setInt(6, customer.getCustomerID());
@@ -64,7 +64,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
           return new Customer(
               rs.getInt("CustomerID"), rs.getString("FirstName"),
               rs.getString("LastName"),
-              Long.parseLong(rs.getString("PhoneNumber")),
+              rs.getString("PhoneNumber"),
               rs.getString("Email"), rs.getString("Address"), null);
         } else {
           return null;
@@ -94,7 +94,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         customers.add(
             new Customer(rs.getInt("CustomerID"), rs.getString("FirstName"),
                          rs.getString("LastName"),
-                         Long.parseLong(rs.getString("PhoneNumber")),
+                         rs.getString("PhoneNumber"),
                          rs.getString("Email"), rs.getString("Address"), null));
       }
     }
