@@ -6,58 +6,59 @@ USE RestaurantDB;
 
 -- Create Customer table
 CREATE TABLE Customer (
-                          CustomerID INT PRIMARY KEY AUTO_INCREMENT,
-                          FirstName VARCHAR(255) NOT NULL,
-                          LastName VARCHAR(255) NOT NULL,
-                          PhoneNumber VARCHAR(20),
-                          Email VARCHAR(255),
-                          Address VARCHAR(255)
+    CustomerID int PRIMARY KEY AUTO_INCREMENT,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    PhoneNumber varchar(20),
+    Email varchar(255),
+    Address varchar(255)
 );
 
 -- Create Table table
 CREATE TABLE RestaurantTable (
-                                 TableID INT PRIMARY KEY AUTO_INCREMENT,
-                                 TableNumber INT NOT NULL,
-                                 SeatingCapacity INT NOT NULL
+    TableID int PRIMARY KEY AUTO_INCREMENT,
+    TableNumber int NOT NULL,
+    SeatingCapacity int NOT NULL
 );
 
 -- Create Staff table
 CREATE TABLE Staff (
-                       StaffID INT PRIMARY KEY AUTO_INCREMENT,
-                       FirstName VARCHAR(255) NOT NULL,
-                       LastName VARCHAR(255) NOT NULL,
-                       Role VARCHAR(255) NOT NULL,
-                       PhoneNumber VARCHAR(20),
-                       Email VARCHAR(255),
-                       Address VARCHAR(255)
+    StaffID int PRIMARY KEY AUTO_INCREMENT,
+    FirstName varchar(255) NOT NULL,
+    LastName varchar(255) NOT NULL,
+    Role VARCHAR(255) NOT NULL,
+    PhoneNumber varchar(20),
+    Email varchar(255),
+    Address varchar(255)
 );
 
 -- Create Reservation table
 CREATE TABLE Reservation (
-                             ReservationID INT PRIMARY KEY AUTO_INCREMENT,
-                             CustomerID INT,
-                             Date DATE NOT NULL,
-                             Time TIME NOT NULL,
-                             NumberOfPeople INT NOT NULL,
-                             FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID)
+    ReservationID int PRIMARY KEY AUTO_INCREMENT,
+    CustomerID int,
+    Date date NOT NULL,
+    Time time NOT NULL,
+    NumberOfPeople int NOT NULL,
+    FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID)
 );
 
 -- Create ReservationTable junction table to represent the relationship between Reservation and Table
 CREATE TABLE ReservationTable (
-                                  ReservationID INT,
-                                  TableID INT,
-                                  PRIMARY KEY (ReservationID, TableID),
-                                  FOREIGN KEY (ReservationID) REFERENCES Reservation(ReservationID),
-                                  FOREIGN KEY (TableID) REFERENCES RestaurantTable(TableID)
+    ReservationID int,
+    TableID int,
+    PRIMARY KEY (ReservationID, TableID),
+    FOREIGN KEY (ReservationID) REFERENCES Reservation (ReservationID),
+    FOREIGN KEY (TableID) REFERENCES RestaurantTable (TableID)
 );
 
 -- Create StaffAssignment table to represent the relationship between Staff and Table
 CREATE TABLE StaffAssignment (
-                                 AssignmentID INT PRIMARY KEY AUTO_INCREMENT,
-                                 StaffID INT,
-                                 TableID INT,
-                                 Date DATE NOT NULL,
-                                 Time TIME NOT NULL,
-                                 FOREIGN KEY (StaffID) REFERENCES Staff(StaffID),
-                                 FOREIGN KEY (TableID) REFERENCES RestaurantTable(TableID)
+    AssignmentID int PRIMARY KEY AUTO_INCREMENT,
+    StaffID int,
+    TableID int,
+    Date date NOT NULL,
+    Time time NOT NULL,
+    FOREIGN KEY (StaffID) REFERENCES Staff (StaffID),
+    FOREIGN KEY (TableID) REFERENCES RestaurantTable (TableID)
 );
+
