@@ -75,4 +75,3 @@ FROM
     JOIN RestaurantTable t ON sa.TableID = t.TableID
 WHERE
     sa.Date = '2024-06-15';
-
