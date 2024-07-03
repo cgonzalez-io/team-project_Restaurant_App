@@ -10,7 +10,7 @@ import java.sql.SQLException;
 public class DatabaseUtil {
 
     //TODO: Move the following constants to a configuration file or environment files.
-    private static final String URL = "jdbc:mysql://localhost:3306/myDB";
+    private static final String URL = "jdbc:mysql://localhost:3306/RESTAURANT_DB";
     private static final String USER = "root";
     private static final String PASSWORD = "password";
 
