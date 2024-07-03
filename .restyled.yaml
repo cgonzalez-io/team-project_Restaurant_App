@@ -1,5 +1,6 @@
 enabled : true
-exclude : []
+exclude : "gradlew*"  # Exclude gradlew and gradlew.bat
+also_exclude: []
 changed_paths:
     maximum: 1000
     outcome: error
