@@ -12,6 +12,9 @@ public class RestaurantTable {
 
   // Constructors
   public RestaurantTable(int tableID, int tableNumber, int seatingCapacity) {
+    if (tableID < 0 || tableNumber < 0 || seatingCapacity < 0) {
+      throw new IllegalArgumentException("Values cannot be negative");
+    }
     this.tableID = tableID;
     this.tableNumber = tableNumber;
     this.seatingCapacity = seatingCapacity;
@@ -27,17 +30,27 @@ public class RestaurantTable {
   // Getters and Setters
   public int getTableID() { return tableID; }
 
-  public void setTableID(int tableID) { this.tableID = tableID; }
-
+  public void setTableID(int tableID) {
+    if (tableID < 0) {
+      throw new IllegalArgumentException("Table ID cannot be negative.");
+    }
+    this.tableID = tableID;
+  }
   public int getTableNumber() { return tableNumber; }
 
   public void setTableNumber(int tableNumber) {
+    if (tableNumber < 0) {
+      throw new IllegalArgumentException("Table number cannot be negative");
+    }
     this.tableNumber = tableNumber;
   }
 
   public int getSeatingCapacity() { return seatingCapacity; }
 
   public void setSeatingCapacity(int seatingCapacity) {
+    if (seatingCapacity < 0) {
+      throw new IllegalArgumentException("Seating capacity cannot be negative");
+    }
     this.seatingCapacity = seatingCapacity;
   }
 }
