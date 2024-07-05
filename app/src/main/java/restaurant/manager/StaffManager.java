@@ -68,8 +68,8 @@ public class StaffManager {
   }
 
   private static void insertStaff() throws SQLException {
-    System.out.println("Enter staff ID, first name, last name, phone, email, " +
-                       "address, and role:");
+    System.out.println("Enter staff ID, first name, last name, phone, email, "
+                       + "address, and role:");
 
     int staffID = scan.nextInt();
     String fName = scan.nextLine();
