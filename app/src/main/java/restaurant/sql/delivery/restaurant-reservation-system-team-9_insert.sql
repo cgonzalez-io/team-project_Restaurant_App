@@ -4,10 +4,10 @@ INSERT INTO CUSTOMER (Customer_ID, First_Name, Last_Name, Phone_Number, Email, A
     (2, 'Bob', 'Smith', '34567', 'bob.smith@email.com', '223 Elm St'),
     (3, 'Emily', 'Brown', '98765', 'emily.brown@email.com', '777 Maple Avenue');
 
-INSERT INTO RESERVATION (Reservation_ID, Customer_ID, Number_Of_People, Time, Date)
-    VALUES (1, 1, 4, '18:30:00', '2024-06-21'),
-    (2, 2, 2, '19:00:00', '2024-06-22'),
-    (3, 3, 3, '20:00:00', '2024-06-23');
+INSERT INTO RESERVATION (Customer_ID, Number_Of_People, Time, Date)
+    VALUES (1, 4, '18:30:00', '2024-06-21'),
+    (2, 2, '19:00:00', '2024-06-22'),
+    (3, 3, '20:00:00', '2024-06-23');
 
 INSERT INTO TABLE_INFO (Table_ID, Seating_Capacity, Table_Number)
     VALUES (1, 4, 101),

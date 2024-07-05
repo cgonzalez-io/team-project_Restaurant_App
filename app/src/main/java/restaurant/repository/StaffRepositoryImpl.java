@@ -11,7 +11,7 @@ public class StaffRepositoryImpl implements StaffRepository {
 
   @Override
   public void insert(Staff staff) throws SQLException {
-    String sql = "INSERT INTO Staff (FirstName, LastName, Role, PhoneNumber, "
+    String sql = "INSERT INTO STAFF (FirstName, LastName, Role, PhoneNumber, "
                  + "Email, Address) VALUES (?, ?, ?, ?, ?, ?)";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt =
