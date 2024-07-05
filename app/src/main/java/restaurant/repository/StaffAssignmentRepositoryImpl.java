@@ -51,8 +51,8 @@ public class StaffAssignmentRepositoryImpl
   @Override
   public StaffAssignment findById(int tableID, int staffID, Date date,
                                   Time time) throws SQLException {
-    String sql = "SELECT * FROM ASSIGNED_TO WHERE Table_ID = ? AND Staff_ID " +
-                 "= ? AND Date = ? AND Time = ?";
+    String sql = "SELECT * FROM ASSIGNED_TO WHERE Table_ID = ? AND Staff_ID "
+                 + "= ? AND Date = ? AND Time = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, tableID);
@@ -74,8 +74,8 @@ public class StaffAssignmentRepositoryImpl
   @Override
   public void delete(int tableID, int staffID, Date date, Time time)
       throws SQLException {
-    String sql = "DELETE FROM ASSIGNED_TO WHERE Table_ID = ? AND Staff_ID = " +
-                 "? AND Date = ? AND Time = ?";
+    String sql = "DELETE FROM ASSIGNED_TO WHERE Table_ID = ? AND Staff_ID = "
+                 + "? AND Date = ? AND Time = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, tableID);
