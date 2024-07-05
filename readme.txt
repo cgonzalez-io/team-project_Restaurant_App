@@ -14,7 +14,7 @@ https://hub.docker.com/_/mysql refer to this link for more information on the my
         //this will setup the main test user
     b. Run docker with the following configuration
         Command:
-        docker run -p 3306:3306 --env MYSQL_DATABASE=myDB --env MYSQL_ROOT_PASSWORD=password --env MYSQL_USER=admin --env 
+        docker run -p 3306:3306 --env MYSQL_DATABASE=myDB --env MYSQL_ROOT_PASSWORD=password --env MYSQL_USER=admin --env
         MYSQL_PASSWORD=admin --name RestaurantDB --pull missing mysql:8.3 --default-authentication-plugin=mysql_native_password
 
 Project Description:
