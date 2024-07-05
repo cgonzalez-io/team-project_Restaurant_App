@@ -15,7 +15,7 @@ class CustomerTest {
 
   @Test
   public void unit_test_handles_null_values_gracefully() {
-    Customer customer = new Customer(1, null, null, 0, null, null, null);
+    Customer customer = new Customer(1, null, null, null, null, null, null);
     assertNull(customer.getFirstName());
     assertNull(customer.getLastName());
     assertNull(customer.getEmail());
@@ -25,10 +25,11 @@ class CustomerTest {
 
   @Test
   public void unit_test_initializes_customer_with_valid_inputs() {
-    ContactNode nextNode = new ContactNode(
-        "Jane", "Doe", 1234567890, "jane.doe@example.com", "123 Main St", null);
+    ContactNode nextNode =
+        new ContactNode("Jane", "Doe", "1234567890", "jane.doe@example.com",
+                        "123 Main St", null);
     Customer customer =
-        new Customer(1, "John", "Doe", 9876543210L, "john.doe@example.com",
+        new Customer(1, "John", "Doe", "9876543210L", "john.doe@example.com",
                      "456 Elm St", nextNode);
 
     assertEquals(1, customer.getCustomerID());
@@ -42,10 +43,11 @@ class CustomerTest {
 
   @Test
   public void unit_test_initializes_customer_with_customerID_zero() {
-    ContactNode nextNode = new ContactNode(
-        "Jane", "Doe", 1234567890, "jane.doe@example.com", "123 Main St", null);
+    ContactNode nextNode =
+        new ContactNode("Jane", "Doe", "1234567890", "jane.doe@example.com",
+                        "123 Main St", null);
     Customer customer =
-        new Customer(0, "John", "Doe", 9876543210L, "john.doe@example.com",
+        new Customer(0, "John", "Doe", "9876543210L", "john.doe@example.com",
                      "456 Elm St", nextNode);
 
     assertEquals(0, customer.getCustomerID());
@@ -61,7 +63,7 @@ class CustomerTest {
   public void
   unit_test_returns_correct_customerID_when_valid_customerID_is_set() {
     Customer customer =
-        new Customer(123, "John", "Doe", 1234567890, "john.doe@example.com",
+        new Customer(123, "John", "Doe", "1234567890", "john.doe@example.com",
                      "123 Main St", null);
     assertEquals(123, customer.getCustomerID());
   }
@@ -70,7 +72,7 @@ class CustomerTest {
   public void
   unit_test_returns_correct_customerID_when_customerID_is_set_to_zero() {
     Customer customer =
-        new Customer(0, "Jane", "Doe", 9876543210L, "jane.doe@example.com",
+        new Customer(0, "Jane", "Doe", "9876543210L", "jane.doe@example.com",
                      "456 Elm St", null);
     assertEquals(0, customer.getCustomerID());
   }
@@ -93,10 +95,11 @@ class CustomerTest {
 
   @Test
   public void unit_test_correct_string_format_fully_populated_customer() {
-    ContactNode nextNode = new ContactNode(
-        "Jane", "Doe", 1234567890, "jane.doe@example.com", "123 Main St", null);
+    ContactNode nextNode =
+        new ContactNode("Jane", "Doe", "1234567890", "jane.doe@example.com",
+                        "123 Main St", null);
     Customer customer =
-        new Customer(1, "John", "Smith", 987654321, "john.smith@example.com",
+        new Customer(1, "John", "Smith", "987654321", "john.smith@example.com",
                      "456 Elm St", nextNode);
     String expected =
         "Customer{customerId=1, name='John Smith', firstName='John', "
@@ -111,10 +114,10 @@ class CustomerTest {
   public void unit_test_extremely_long_strings_in_fields() {
     String longString = "a".repeat(1000);
     ContactNode nextNode =
-        new ContactNode(longString, longString, 1234567890,
+        new ContactNode(longString, longString, "1234567890",
                         longString + "@example.com", longString, null);
     Customer customer =
-        new Customer(1, longString, longString, 987654321,
+        new Customer(1, longString, longString, "987654321",
                      longString + "@example.com", longString, nextNode);
     String expected =
         "Customer{customerId=1, name='" + longString + " " + longString +
@@ -131,7 +134,7 @@ class CustomerTest {
   @Test
   public void unit_test_equals_same_customer_object() {
     Customer customer =
-        new Customer(1, "John", "Doe", 1234567890, "john.doe@example.com",
+        new Customer(1, "John", "Doe", "1234567890", "john.doe@example.com",
                      "123 Main St", null);
     assertTrue(customer.equals(customer));
   }
@@ -140,10 +143,10 @@ class CustomerTest {
   public void
   unit_test_equals_different_customerIDs_identical_ContactNode_attributes() {
     Customer customer1 =
-        new Customer(1, "John", "Doe", 1234567890, "john.doe@example.com",
+        new Customer(1, "John", "Doe", "1234567890", "john.doe@example.com",
                      "123 Main St", null);
     Customer customer2 =
-        new Customer(2, "John", "Doe", 1234567890, "john.doe@example.com",
+        new Customer(2, "John", "Doe", "1234567890", "john.doe@example.com",
                      "123 Main St", null);
     assertFalse(customer1.equals(customer2));
   }
@@ -151,7 +154,7 @@ class CustomerTest {
   @Test
   public void unit_test_hashCode_consistent_values() {
     Customer customer =
-        new Customer(1, "John", "Doe", 1234567890, "john.doe@example.com",
+        new Customer(1, "John", "Doe", "1234567890", "john.doe@example.com",
                      "123 Main St", null);
     int initialHashCode = customer.hashCode();
     assertEquals(initialHashCode, customer.hashCode());
@@ -161,7 +164,7 @@ class CustomerTest {
   @Test
   public void unit_test_hashCode_customerID_zero() {
     Customer customer =
-        new Customer(0, "Jane", "Doe", 987654321, "jane.doe@example.com",
+        new Customer(0, "Jane", "Doe", "987654321", "jane.doe@example.com",
                      "456 Elm St", null);
     int hashCode = customer.hashCode();
     assertNotNull(hashCode);
@@ -170,7 +173,7 @@ class CustomerTest {
   @Test
   public void test_create_customer_with_valid_details() {
     Customer customer =
-        new Customer(1, "John", "Doe", 1234567890, "john.doe@example.com",
+        new Customer(1, "John", "Doe", "1234567890", "john.doe@example.com",
                      "123 Main St", null);
     assertEquals(1, customer.getCustomerID());
     assertEquals("John", customer.getFirstName());
@@ -183,7 +186,7 @@ class CustomerTest {
 
   @Test
   public void test_create_customer_with_null_or_empty_strings() {
-    Customer customer = new Customer(2, "", "", 0, "", "", null);
+    Customer customer = new Customer(2, "", "", "", "", "", null);
     assertEquals(2, customer.getCustomerID());
     assertEquals("", customer.getFirstName());
     assertEquals("", customer.getLastName());

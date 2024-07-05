@@ -78,7 +78,7 @@ public class ContactBook {
     System.out.println("Enter name, phone, and email:");
 
     contact.setName(scan.nextLine());
-    contact.setPhone(scan.nextInt());
+    contact.setPhone(scan.nextLine());
     scan.nextLine(); // remove \n
     contact.setEmail(scan.nextLine());
 

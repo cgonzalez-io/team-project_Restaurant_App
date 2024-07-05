@@ -19,7 +19,7 @@ public class StaffRepositoryImpl implements StaffRepository {
       pstmt.setString(1, staff.getFirstName());
       pstmt.setString(2, staff.getLastName());
       pstmt.setString(3, staff.getRole());
-      pstmt.setLong(4, staff.getPhone());
+      pstmt.setString(4, staff.getPhone());
       pstmt.setString(5, staff.getEmail());
       pstmt.setString(6, staff.getAddress());
       pstmt.executeUpdate();
@@ -41,7 +41,7 @@ public class StaffRepositoryImpl implements StaffRepository {
       pstmt.setString(1, staff.getFirstName());
       pstmt.setString(2, staff.getLastName());
       pstmt.setString(3, staff.getRole());
-      pstmt.setLong(4, staff.getPhone());
+      pstmt.setString(4, staff.getPhone());
       pstmt.setString(5, staff.getEmail());
       pstmt.setString(6, staff.getAddress());
       pstmt.setInt(7, staff.getStaffId());
@@ -59,9 +59,8 @@ public class StaffRepositoryImpl implements StaffRepository {
         if (rs.next()) {
           return new Staff(rs.getInt("StaffID"), rs.getString("FirstName"),
                            rs.getString("LastName"),
-                           Long.parseLong(rs.getString("PhoneNumber")),
-                           rs.getString("Email"), rs.getString("Address"),
-                           rs.getString("Role"), null);
+                           rs.getString("PhoneNumber"), rs.getString("Email"),
+                           rs.getString("Address"), rs.getString("Role"), null);
         } else {
           return null;
         }
@@ -89,7 +88,7 @@ public class StaffRepositoryImpl implements StaffRepository {
       while (rs.next()) {
         staffList.add(new Staff(rs.getInt("StaffID"), rs.getString("FirstName"),
                                 rs.getString("LastName"),
-                                Long.parseLong(rs.getString("PhoneNumber")),
+                                rs.getString("PhoneNumber"),
                                 rs.getString("Email"), rs.getString("Address"),
                                 rs.getString("Role"), null));
       }

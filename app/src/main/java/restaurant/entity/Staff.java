@@ -19,7 +19,15 @@ public class Staff extends ContactNode {
     this.role = "";
   }
 
-  public Staff(int staffId, String firstName, String lastName, long phone,
+  // Add this constructor to fix the issue
+  public Staff(int staffID, String firstName, String lastName, String phone,
+               String email, String address, String role) {
+    super(firstName, lastName, phone, email, address, null);
+    this.staffID = staffID;
+    this.role = role;
+  }
+
+  public Staff(int staffId, String firstName, String lastName, String phone,
                String email, String address, String role, ContactNode next) {
     super(firstName, lastName, phone, email, address, next);
     this.staffID = staffId;
