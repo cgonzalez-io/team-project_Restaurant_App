@@ -23,7 +23,7 @@ VALUES
     (3, 'David', 'Brown', 'Manager', '3333333333', 'david.brown@example.com', '987 Cedar St');
 
 -- Insert sample data into RESERVATION table
-INSERT INTO RESERVATION (CustomerID, Date, Time, NumberOfPeople)
+INSERT INTO RESERVATION (Customer_ID, Date, Time, NumberOfPeople)
 VALUES
     (1, '2024-07-10', '18:00:00', 4),
     (2, '2024-07-11', '19:00:00', 2),

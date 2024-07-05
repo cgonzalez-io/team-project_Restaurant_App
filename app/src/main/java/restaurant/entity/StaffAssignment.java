@@ -6,19 +6,30 @@ import java.util.Objects;
 
 public class StaffAssignment {
 
+    private int tableID;
+    private int staffID;
+    private Date date;
+    private Time time;
+    public StaffAssignment(int tableID, int staffID, Date date, Time time) {
+        this.tableID = tableID;
+        this.staffID = staffID;
+        this.date = date;
+        this.time = time;
+    }
+
     @Override
     public String toString() {
         return (
             "StaffAssignment{" +
-            "tableID=" +
-            tableID +
-            ", staffID=" +
-            staffID +
-            ", date=" +
-            date +
-            ", time=" +
-            time +
-            '}'
+                "tableID=" +
+                tableID +
+                ", staffID=" +
+                staffID +
+                ", date=" +
+                date +
+                ", time=" +
+                time +
+                '}'
         );
     }
 
@@ -28,27 +39,15 @@ public class StaffAssignment {
         if (!(o instanceof StaffAssignment that)) return false;
         return (
             getTableID() == that.getTableID() &&
-            getStaffID() == that.getStaffID() &&
-            Objects.equals(getDate(), that.getDate()) &&
-            Objects.equals(getTime(), that.getTime())
+                getStaffID() == that.getStaffID() &&
+                Objects.equals(getDate(), that.getDate()) &&
+                Objects.equals(getTime(), that.getTime())
         );
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(getTableID(), getStaffID(), getDate(), getTime());
-    }
-
-    private int tableID;
-    private int staffID;
-    private Date date;
-    private Time time;
-
-    public StaffAssignment(int tableID, int staffID, Date date, Time time) {
-        this.tableID = tableID;
-        this.staffID = staffID;
-        this.date = date;
-        this.time = time;
     }
 
     // Getters and Setters

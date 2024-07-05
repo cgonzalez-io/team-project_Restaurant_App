@@ -23,6 +23,11 @@ public class Customer extends ContactNode {
         this.customerID = customerID;
     }
 
+    // Constructor without customerID
+    public Customer(String firstName, String lastName, String phone, String email, String address) {
+        super(firstName, lastName, phone, email, address, null);
+    }
+
     public Customer(
         int customerID,
         String firstName,
