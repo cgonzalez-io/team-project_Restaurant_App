@@ -28,9 +28,8 @@ class DatabaseUtilTest {
       assertNotNull(connection);
       connection.close();
     } catch (SQLException e) {
-      fail("Connection should be established successfully, but an exception " +
-           "was thrown: " +
-           e.getMessage());
+      fail("Connection should be established successfully, but an exception "
+           + "was thrown: " + e.getMessage());
     }
   }
 
@@ -56,8 +55,8 @@ class DatabaseUtilTest {
       assertFalse(connection.isClosed());
       connection.close();
     } catch (SQLException e) {
-      fail("Connection should be established successfully with valid " +
-           "properties.");
+      fail("Connection should be established successfully with valid "
+           + "properties.");
     }
   }
 }

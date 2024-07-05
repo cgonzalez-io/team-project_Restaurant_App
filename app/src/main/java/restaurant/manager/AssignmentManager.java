@@ -91,15 +91,15 @@ public class AssignmentManager {
   }
 
   private static void update() throws SQLException {
-    System.out.println("Enter existing Staff ID, Table ID, Date " +
-                       "(yyyy-mm-dd), and Time (hh:mm:ss) to update:");
+    System.out.println("Enter existing Staff ID, Table ID, Date "
+                       + "(yyyy-mm-dd), and Time (hh:mm:ss) to update:");
     try {
       int staffID = Integer.parseInt(scan.nextLine());
       int tableID = Integer.parseInt(scan.nextLine());
       Date date = Date.valueOf(scan.nextLine());
       Time time = Time.valueOf(scan.nextLine());
-      System.out.println("Enter new Staff ID, new Table ID, new Date " +
-                         "(yyyy-mm-dd), and new Time (hh:mm:ss):");
+      System.out.println("Enter new Staff ID, new Table ID, new Date "
+                         + "(yyyy-mm-dd), and new Time (hh:mm:ss):");
       int newStaffID = Integer.parseInt(scan.nextLine());
       int newTableID = Integer.parseInt(scan.nextLine());
       Date newDate = Date.valueOf(scan.nextLine());
@@ -119,8 +119,8 @@ public class AssignmentManager {
   }
 
   private static void deleteAssignment() throws SQLException {
-    System.out.println("Enter Staff ID, Table ID, Date (yyyy-mm-dd), and " +
-                       "Time (hh:mm:ss) to delete:");
+    System.out.println("Enter Staff ID, Table ID, Date (yyyy-mm-dd), and "
+                       + "Time (hh:mm:ss) to delete:");
 
     try {
       int staffID = Integer.parseInt(scan.nextLine());
@@ -139,8 +139,8 @@ public class AssignmentManager {
   }
 
   private static void searchAssignment() throws SQLException {
-    System.out.println("Enter Staff ID, Table ID, Date (yyyy-mm-dd), and " +
-                       "Time (hh:mm:ss) to search:");
+    System.out.println("Enter Staff ID, Table ID, Date (yyyy-mm-dd), and "
+                       + "Time (hh:mm:ss) to search:");
 
     try {
       int staffID = Integer.parseInt(scan.nextLine());
