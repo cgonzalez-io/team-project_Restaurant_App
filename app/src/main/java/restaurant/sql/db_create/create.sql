@@ -46,3 +46,4 @@ CREATE TABLE StaffAssignment (
     FOREIGN KEY (StaffID) REFERENCES Staff (StaffID),
     FOREIGN KEY (TableID) REFERENCES RestaurantTable (TableID)
 );
+

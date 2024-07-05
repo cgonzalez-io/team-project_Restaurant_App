@@ -27,3 +27,4 @@ INSERT INTO StaffAssignment (StaffID, TableID, Date, Time)
     VALUES (1, 1, '2024-06-15', '18:00:00'),
     (2, 2, '2024-06-16', '19:00:00'),
     (3, 3, '2024-06-17', '20:00:00');
+
