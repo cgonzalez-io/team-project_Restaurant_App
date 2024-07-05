@@ -42,3 +42,9 @@ pmd-report.csv
 *.drawio.dtmp
 ### Project Specific ###
 !/Assignment-Template.iml
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
