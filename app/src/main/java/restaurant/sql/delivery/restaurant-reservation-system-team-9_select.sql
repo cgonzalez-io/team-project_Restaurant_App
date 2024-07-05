@@ -60,4 +60,3 @@ FROM
     JOIN TABLE_INFO t ON rt.Table_ID = t.Table_ID
 WHERE
     rt.Reservation_ID = 1;
-
