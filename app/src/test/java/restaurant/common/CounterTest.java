@@ -1,5 +1,6 @@
 package restaurant.common;
 
+<<<<<<< HEAD
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -67,3 +68,4 @@ class CounterTest {
     assertEquals(0, counter.tally());
   }
 }
+>>>>>>> development

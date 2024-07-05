@@ -4,10 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- * The DatabaseUtil class provides a method to establish a connection to the
- * database.
- */
 public class DatabaseUtil {
 
   // TODO: Move the following constants to a configuration file or environment
