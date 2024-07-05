@@ -13,46 +13,51 @@ import org.mockito.Mockito;
 
 /**
  * This class contains test cases for the DatabaseUtil class.
- * The test cases test the functionality of the getConnection() method in different scenarios.
+ * The test cases test the functionality of the getConnection() method in
+ * different scenarios.
  */
 class DatabaseUtilTest {
 
-    private static final Logger LOGGER = Logger.getLogger(DatabaseUtilTest.class.getName());
+  private static final Logger LOGGER =
+      Logger.getLogger(DatabaseUtilTest.class.getName());
 
-    @Test
-    public void unit_test_successful_connection() {
-        try {
-            Connection connection = DatabaseUtil.getConnection();
-            assertNotNull(connection);
-            connection.close();
-        } catch (SQLException e) {
-            fail("Connection should be established successfully, but an exception was thrown: " + e.getMessage());
-        }
+  @Test
+  public void unit_test_successful_connection() {
+    try {
+      Connection connection = DatabaseUtil.getConnection();
+      assertNotNull(connection);
+      connection.close();
+    } catch (SQLException e) {
+      fail("Connection should be established successfully, but an exception " +
+           "was thrown: " +
+           e.getMessage());
     }
+  }
 
-    @Test
-    void unit_test_missing_properties_file() throws SQLException {
-        try (MockedStatic<DatabaseUtil> mockedDatabaseUtil = Mockito.mockStatic(DatabaseUtil.class)) {
-            mockedDatabaseUtil
-                .when(DatabaseUtil::getConnection)
-                .thenThrow(new SQLException("Failed to read from properties file."));
+  @Test
+  void unit_test_missing_properties_file() throws SQLException {
+    try (MockedStatic<DatabaseUtil> mockedDatabaseUtil =
+             Mockito.mockStatic(DatabaseUtil.class)) {
+      mockedDatabaseUtil.when(DatabaseUtil::getConnection)
+          .thenThrow(new SQLException("Failed to read from properties file."));
 
-            SQLException thrown = assertThrows(SQLException.class, () -> {
-                DatabaseUtil.getConnection();
-            });
-            assertTrue(thrown.getMessage().contains("Failed to read from properties file."));
-        }
+      SQLException thrown = assertThrows(
+          SQLException.class, () -> { DatabaseUtil.getConnection(); });
+      assertTrue(
+          thrown.getMessage().contains("Failed to read from properties file."));
     }
+  }
 
-    @Test
-    public void func_test_successful_connection_with_valid_properties() {
-        try {
-            Connection connection = DatabaseUtil.getConnection();
-            assertNotNull(connection);
-            assertFalse(connection.isClosed());
-            connection.close();
-        } catch (SQLException e) {
-            fail("Connection should be established successfully with valid properties.");
-        }
+  @Test
+  public void func_test_successful_connection_with_valid_properties() {
+    try {
+      Connection connection = DatabaseUtil.getConnection();
+      assertNotNull(connection);
+      assertFalse(connection.isClosed());
+      connection.close();
+    } catch (SQLException e) {
+      fail("Connection should be established successfully with valid " +
+           "properties.");
     }
+  }
 }

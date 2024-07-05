@@ -59,9 +59,8 @@ public class StaffRepositoryImpl implements StaffRepository {
         if (rs.next()) {
           return new Staff(rs.getInt("StaffID"), rs.getString("FirstName"),
                            rs.getString("LastName"),
-                           rs.getString("PhoneNumber"),
-                           rs.getString("Email"), rs.getString("Address"),
-                           rs.getString("Role"), null);
+                           rs.getString("PhoneNumber"), rs.getString("Email"),
+                           rs.getString("Address"), rs.getString("Role"), null);
         } else {
           return null;
         }
