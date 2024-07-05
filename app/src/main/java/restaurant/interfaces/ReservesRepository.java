@@ -10,7 +10,7 @@ public interface ReservesRepository {
 
     void update(ReservationTable reserve) throws SQLException;
 
-    void delete(int reservationId, int tableId) throws SQLException;
+    void delete(int reservationId, int tableId)throws SQLException;
 
     ReservationTable findById(int reservationId, int tableId) throws SQLException;
 

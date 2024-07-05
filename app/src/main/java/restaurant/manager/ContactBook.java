@@ -11,13 +11,13 @@ import restaurant.entity.superclass.ContactNode;
  * @see ContactNode
  * @version 1.0
  */
-//TODO: Model this into the customer input for the reservation system
+// TODO: Model this into the customer input for the reservation system
 public class ContactBook {
 
     private static ContactNode head = null;
     private static Scanner scan = new Scanner(System.in);
 
-    //print menu for selection
+    // print menu for selection
     public static void main(String[] args) {
         String choice = "";
 
@@ -61,7 +61,7 @@ public class ContactBook {
         }
     }
 
-    //display all contacts
+    // display all contacts
     private static void printAll(ContactNode node) {
         ContactNode iter = node;
 
@@ -79,7 +79,7 @@ public class ContactBook {
 
         contact.setName(scan.nextLine());
         contact.setPhone(scan.nextInt());
-        scan.nextLine(); //remove \n
+        scan.nextLine(); // remove \n
         contact.setEmail(scan.nextLine());
 
         contact.setNext(head); // inserting at the beginning
@@ -89,12 +89,13 @@ public class ContactBook {
     private static ContactNode searchContact(String targetName) {
         ContactNode iter = head, prev = head;
 
-        while (iter != null) if (targetName.equals(iter.getName())) {
-            return prev;
-        } else {
-            prev = iter;
-            iter = iter.getNext();
-        }
+        while (iter != null)
+            if (targetName.equals(iter.getName())) {
+                return prev;
+            } else {
+                prev = iter;
+                iter = iter.getNext();
+            }
 
         System.out.println("The name does not exist.");
         throw new NoSuchElementException();

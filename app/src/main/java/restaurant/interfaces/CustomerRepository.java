@@ -11,7 +11,7 @@ public interface CustomerRepository {
 
     Customer findById(int customerId) throws SQLException;
 
-    void delete(int customerId) throws SQLException;
+    void delete(int customerId)throws SQLException;
 
     List<Customer> findAll() throws SQLException;
 }

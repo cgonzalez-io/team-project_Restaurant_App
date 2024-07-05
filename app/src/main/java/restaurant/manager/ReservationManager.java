@@ -16,8 +16,10 @@ import restaurant.repository.RestaurantTableRepositoryImpl;
 public class ReservationManager {
 
     private static Scanner scan = new Scanner(System.in);
-    private static ReservationRepository reservationRepository = new ReservationRepositoryImpl();
-    private static RestaurantTableRepository tableRepository = new RestaurantTableRepositoryImpl();
+    private static ReservationRepository reservationRepository =
+        new ReservationRepositoryImpl();
+    private static RestaurantTableRepository tableRepository =
+        new RestaurantTableRepositoryImpl();
 
     private static void branching(String choice) {
         try {
@@ -32,7 +34,8 @@ public class ReservationManager {
                     deleteReservation();
                     break;
                 case "s":
-                    System.out.println("Please enter the reservation ID to be searched for:\n");
+                    System.out.println(
+                        "Please enter the reservation ID to be searched for:\n");
                     int reservationID = scan.nextInt();
                     scan.nextLine(); // consume newline
                     searchReservation(reservationID);
@@ -61,9 +64,8 @@ public class ReservationManager {
     }
 
     private static void insert() throws SQLException {
-        System.out.println(
-            "Enter reservation ID, customer ID,number of people, time (hh:mm:ss), and date (yyyy-mm-dd):"
-        );
+        System.out.println("Enter reservation ID, customer ID,number of people, "
+            + "time (hh:mm:ss), and date (yyyy-mm-dd):");
 
         int reservationID = scan.nextInt();
         int customerID = scan.nextInt();
@@ -72,7 +74,8 @@ public class ReservationManager {
         Date date = Date.valueOf(scan.next());
         scan.nextLine();
 
-        Reservation reservation = new Reservation(reservationID, customerID, date, time, numberOfPeople);
+        Reservation reservation =
+            new Reservation(reservationID, customerID, date, time, numberOfPeople);
         reservationRepository.insert(reservation);
     }
 
@@ -81,7 +84,8 @@ public class ReservationManager {
         int reservationID = scan.nextInt();
         scan.nextLine();
 
-        System.out.println("Enter new customer ID, date (yyyy-mm-dd), time (hh:mm:ss), and number of people:");
+        System.out.println("Enter new customer ID, date (yyyy-mm-dd), time "
+            + "(hh:mm:ss), and number of people:");
 
         int customerID = scan.nextInt();
         Date date = Date.valueOf(scan.next());
@@ -89,7 +93,8 @@ public class ReservationManager {
         int numberOfPeople = scan.nextInt();
         scan.nextLine();
 
-        Reservation reservation = new Reservation(reservationID, customerID, date, time, numberOfPeople);
+        Reservation reservation =
+            new Reservation(reservationID, customerID, date, time, numberOfPeople);
         reservationRepository.update(reservation);
     }
 

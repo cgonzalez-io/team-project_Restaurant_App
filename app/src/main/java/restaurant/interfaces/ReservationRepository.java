@@ -11,7 +11,7 @@ public interface ReservationRepository {
 
     Reservation findById(int reservationID) throws SQLException;
 
-    void delete(int reservationID) throws SQLException;
+    void delete(int reservationID)throws SQLException;
 
     List<Reservation> findAll() throws SQLException;
 }

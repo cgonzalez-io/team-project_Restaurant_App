@@ -19,74 +19,39 @@ public class Staff extends ContactNode {
         this.role = "";
     }
 
-    public Staff(
-        int staffId,
-        String firstName,
-        String lastName,
-        long phone,
-        String email,
-        String address,
-        String role,
-        ContactNode next
-    ) {
+    public Staff(int staffId, String firstName, String lastName, long phone,
+                 String email, String address, String role, ContactNode next) {
         super(firstName, lastName, phone, email, address, next);
         this.staffID = staffId;
         this.role = role;
     }
 
-    public int getStaffId() {
-        return staffID;
-    }
+    public int getStaffId() { return staffID; }
 
-    public void setStaffId(int staffId) {
-        this.staffID = staffId;
-    }
+    public void setStaffId(int staffId) { this.staffID = staffId; }
 
-    public String getRole() {
-        return role;
-    }
+    public String getRole() { return role; }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+    public void setRole(String role) { this.role = role; }
 
     @Override
     public String toString() {
-        return (
-            "Staff{" +
-            "staffId=" +
-            staffID +
-            ", role='" +
-            role +
-            '\'' +
-            ", name='" +
-            getName() +
-            '\'' +
-            ", firstName='" +
-            getFirstName() +
-            '\'' +
-            ", lastName='" +
-            getLastName() +
-            '\'' +
-            ", phone=" +
-            getPhone() +
-            ", email='" +
-            getEmail() +
-            '\'' +
-            ", address='" +
-            getAddress() +
-            '\'' +
-            ", next=" +
-            getNext() +
-            '}'
-        );
+        return ("Staff{"
+            + "staffId=" + staffID + ", role='" + role + '\'' + ", name='" +
+            getName() + '\'' + ", firstName='" + getFirstName() + '\'' +
+            ", lastName='" + getLastName() + '\'' + ", phone=" + getPhone() +
+            ", email='" + getEmail() + '\'' + ", address='" + getAddress() +
+            '\'' + ", next=" + getNext() + '}');
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Staff that)) return false;
-        if (!super.equals(o)) return false;
+        if (this == o)
+            return true;
+        if (!(o instanceof Staff that))
+            return false;
+        if (!super.equals(o))
+            return false;
         return staffID == that.staffID && Objects.equals(role, that.role);
     }
 

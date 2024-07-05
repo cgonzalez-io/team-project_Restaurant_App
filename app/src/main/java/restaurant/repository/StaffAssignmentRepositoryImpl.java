@@ -8,18 +8,20 @@ import restaurant.entity.StaffAssignment;
 import restaurant.interfaces.StaffAssignmentRepository;
 
 /**
- * The StaffAssignmentRepositoryImpl class implements the StaffAssignmentRepository interface
- * and provides methods to interact with a database and perform CRUD operations on StaffAssignment objects.
+ * The StaffAssignmentRepositoryImpl class implements the
+ * StaffAssignmentRepository interface and provides methods to interact with a
+ * database and perform CRUD operations on StaffAssignment objects.
  */
-public class StaffAssignmentRepositoryImpl implements StaffAssignmentRepository {
+public class StaffAssignmentRepositoryImpl
+    implements StaffAssignmentRepository {
 
     @Override
     public void insert(StaffAssignment staffAssignment) throws SQLException {
-        String sql = "INSERT INTO StaffAssignment (StaffID, TableID, Date, Time) VALUES (?, ?, ?, ?)";
-        try (
-            Connection conn = DatabaseUtil.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)
-        ) {
+        String sql = "INSERT INTO StaffAssignment (StaffID, TableID, Date, Time) "
+            + "VALUES (?, ?, ?, ?)";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt =
+                 conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setInt(1, staffAssignment.getStaffID());
             pstmt.setInt(2, staffAssignment.getTableID());
             pstmt.setDate(3, staffAssignment.getDate());
@@ -36,8 +38,10 @@ public class StaffAssignmentRepositoryImpl implements StaffAssignmentRepository 
 
     @Override
     public void update(StaffAssignment staffAssignment) throws SQLException {
-        String sql = "UPDATE StaffAssignment SET StaffID = ?, TableID = ?, Date = ?, Time = ? WHERE AssignmentID = ?";
-        try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        String sql = "UPDATE StaffAssignment SET StaffID = ?, TableID = ?, Date "
+            + "= ?, Time = ? WHERE AssignmentID = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, staffAssignment.getStaffID());
             pstmt.setInt(2, staffAssignment.getTableID());
             pstmt.setDate(3, staffAssignment.getDate());
@@ -50,17 +54,14 @@ public class StaffAssignmentRepositoryImpl implements StaffAssignmentRepository 
     @Override
     public StaffAssignment findById(int assignmentId) throws SQLException {
         String sql = "SELECT * FROM StaffAssignment WHERE AssignmentID = ?";
-        try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, assignmentId);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return new StaffAssignment(
-                        rs.getInt("AssignmentID"),
-                        rs.getInt("StaffID"),
-                        rs.getInt("TableID"),
-                        rs.getDate("Date"),
-                        rs.getTime("Time")
-                    );
+                    return new StaffAssignment(rs.getInt("AssignmentID"),
+                        rs.getInt("StaffID"), rs.getInt("TableID"),
+                        rs.getDate("Date"), rs.getTime("Time"));
                 } else {
                     return null;
                 }
@@ -69,9 +70,10 @@ public class StaffAssignmentRepositoryImpl implements StaffAssignmentRepository 
     }
 
     @Override
-    public void delete(int assignmentId) throws SQLException {
+    public void delete(int assignmentId)throws SQLException {
         String sql = "DELETE FROM StaffAssignment WHERE AssignmentID = ?";
-        try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, assignmentId);
             pstmt.executeUpdate();
         }
@@ -81,21 +83,13 @@ public class StaffAssignmentRepositoryImpl implements StaffAssignmentRepository 
     public List<StaffAssignment> findAll() throws SQLException {
         String sql = "SELECT * FROM StaffAssignment";
         List<StaffAssignment> staffAssignments = new ArrayList<>();
-        try (
-            Connection conn = DatabaseUtil.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)
-        ) {
+        try (Connection conn = DatabaseUtil.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                staffAssignments.add(
-                    new StaffAssignment(
-                        rs.getInt("AssignmentID"),
-                        rs.getInt("StaffID"),
-                        rs.getInt("TableID"),
-                        rs.getDate("Date"),
-                        rs.getTime("Time")
-                    )
-                );
+                staffAssignments.add(new StaffAssignment(
+                    rs.getInt("AssignmentID"), rs.getInt("StaffID"),
+                    rs.getInt("TableID"), rs.getDate("Date"), rs.getTime("Time")));
             }
         }
         return staffAssignments;

@@ -11,7 +11,7 @@ public interface RestaurantTableRepository {
 
     RestaurantTable findById(int tableID) throws SQLException;
 
-    void delete(int tableID) throws SQLException;
+    void delete(int tableID)throws SQLException;
 
     List<RestaurantTable> findAll() throws SQLException;
 }

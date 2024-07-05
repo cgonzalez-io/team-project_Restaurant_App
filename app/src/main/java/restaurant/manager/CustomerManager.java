@@ -11,7 +11,8 @@ import restaurant.repository.CustomerRepositoryImpl;
 public class CustomerManager {
 
     private static Scanner scan = new Scanner(System.in);
-    private static CustomerRepository customerRepository = new CustomerRepositoryImpl();
+    private static CustomerRepository customerRepository =
+        new CustomerRepositoryImpl();
 
     public void showMenu() {
         String choice = "";
@@ -42,7 +43,8 @@ public class CustomerManager {
                     deleteCustomer();
                     break;
                 case "s":
-                    System.out.println("Please enter the customer ID to be searched for:\n");
+                    System.out.println(
+                        "Please enter the customer ID to be searched for:\n");
                     int customerID = scan.nextInt();
                     scan.nextLine(); // consume newline
                     searchCustomer(customerID);
@@ -68,7 +70,8 @@ public class CustomerManager {
     }
 
     private static void insert() throws SQLException {
-        System.out.println("Enter customer ID, first name, last name, phone number, email, and address:");
+        System.out.println("Enter customer ID, first name, last name, phone "
+            + "number, email, and address:");
 
         int customerID = scan.nextInt();
         String firstName = scan.next();
@@ -78,7 +81,8 @@ public class CustomerManager {
         scan.nextLine();
         String address = scan.nextLine().trim();
 
-        Customer customer = new Customer(customerID, firstName, lastName, phoneNumber, email, address);
+        Customer customer = new Customer(customerID, firstName, lastName,
+            phoneNumber, email, address);
         customerRepository.insert(customer);
     }
 
@@ -87,7 +91,8 @@ public class CustomerManager {
         int customerID = scan.nextInt();
         scan.nextLine(); // consume newline
 
-        System.out.println("Enter new first name, last name, phone number, email, and address:");
+        System.out.println(
+            "Enter new first name, last name, phone number, email, and address:");
 
         String firstName = scan.next();
         String lastName = scan.next();
@@ -96,7 +101,8 @@ public class CustomerManager {
         scan.nextLine();
         String address = scan.nextLine().trim();
 
-        Customer customer = new Customer(customerID, firstName, lastName, phoneNumber, email, address);
+        Customer customer = new Customer(customerID, firstName, lastName,
+            phoneNumber, email, address);
         customerRepository.update(customer);
     }
 

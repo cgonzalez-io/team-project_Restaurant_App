@@ -10,7 +10,8 @@ import restaurant.repository.ReservesRepositoryImpl;
 public class ReservesManager {
 
     private static final Scanner scan = new Scanner(System.in);
-    private static final ReservesRepository reservesRepository = new ReservesRepositoryImpl();
+    private static final ReservesRepository reservesRepository =
+        new ReservesRepositoryImpl();
 
     public void showMenu() {
         String choice;
@@ -115,7 +116,8 @@ public class ReservesManager {
         try {
             int reservationID = Integer.parseInt(scan.nextLine());
             int tableID = Integer.parseInt(scan.nextLine());
-            ReservationTable reserve = reservesRepository.findById(reservationID, tableID);
+            ReservationTable reserve =
+                reservesRepository.findById(reservationID, tableID);
             if (reserve != null) {
                 System.out.println(reserve);
             } else {

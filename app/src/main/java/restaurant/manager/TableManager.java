@@ -11,7 +11,8 @@ import restaurant.repository.RestaurantTableRepositoryImpl;
 public class TableManager {
 
     private static Scanner scan = new Scanner(System.in);
-    private static RestaurantTableRepository tableRepository = new RestaurantTableRepositoryImpl();
+    private static RestaurantTableRepository tableRepository =
+        new RestaurantTableRepositoryImpl();
 
     public void showMenu() {
         String choice = "";
@@ -61,24 +62,28 @@ public class TableManager {
     }
 
     private void insertTable() throws SQLException {
-        System.out.println("Please enter a table ID, table number and seating capacity:");
+        System.out.println(
+            "Please enter a table ID, table number and seating capacity:");
         int tableID = scan.nextInt();
         int tableNumber = scan.nextInt();
         int seatingCapacity = scan.nextInt();
         scan.nextLine();
 
-        RestaurantTable newTable = new RestaurantTable(tableID, tableNumber, seatingCapacity);
+        RestaurantTable newTable =
+            new RestaurantTable(tableID, tableNumber, seatingCapacity);
         tableRepository.insert(newTable);
     }
 
     private void updateTable() throws SQLException {
         System.out.println("Please enter the Table ID to be updated:");
         int tableID = scan.nextInt();
-        System.out.println("Please enter the updated table number and seating capacity:");
+        System.out.println(
+            "Please enter the updated table number and seating capacity:");
         int tableNumber = scan.nextInt();
         int seatingCapacity = scan.nextInt();
         scan.nextLine();
-        RestaurantTable updatedTable = new RestaurantTable(tableID, tableNumber, seatingCapacity);
+        RestaurantTable updatedTable =
+            new RestaurantTable(tableID, tableNumber, seatingCapacity);
         tableRepository.update(updatedTable);
     }
 

@@ -11,19 +11,20 @@ import java.util.Queue;
  * @author Christian
  * @version (202403134v5)
  */
-
 import restaurant.interfaces.BST;
 
 /**
- * BinarySearchTree is an implementation of a binary search tree (BST) that allows for efficient operations such as
- * insertion, deletion, search, and traversal. It implements the BST interface and uses a Node class to represent
- * individual nodes in the tree. The tree is ordered based on the keys of the nodes, with smaller keys on the left
- * and larger keys on the right.
+ * BinarySearchTree is an implementation of a binary search tree (BST) that
+ * allows for efficient operations such as insertion, deletion, search, and
+ * traversal. It implements the BST interface and uses a Node class to represent
+ * individual nodes in the tree. The tree is ordered based on the keys of the
+ * nodes, with smaller keys on the left and larger keys on the right.
  *
  * @param <Key>   the type of keys in the BST
  * @param <Value> the type of values associated with the keys
  */
-public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST<Key, Value> {
+public class BinarySearchTree<Key extends Comparable<Key>, Value>
+    implements BST<Key, Value> {
 
     private Node<Key, Value> root;
 
@@ -33,8 +34,10 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     private int size(Node x) {
-        if (x == null) return 0;
-        else return x.N;
+        if (x == null)
+            return 0;
+        else
+            return x.N;
     }
 
     @Override
@@ -44,9 +47,12 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
         while (iter != null) {
             int cmp = key.compareTo(iter.key);
 
-            if (cmp < 0) iter = iter.left;
-            else if (cmp > 0) iter = iter.right;
-            else return iter.val;
+            if (cmp < 0)
+                iter = iter.left;
+            else if (cmp > 0)
+                iter = iter.right;
+            else
+                return iter.val;
         }
 
         return null;
@@ -55,11 +61,15 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     private Value get(Node<Key, Value> x, Key key) {
         // Return value associated with key in the subtree rooted at x;
         // return null if key not present in subtree rooted at x.
-        if (x == null) return null;
+        if (x == null)
+            return null;
         int cmp = key.compareTo(x.key);
-        if (cmp < 0) return get(x.left, key);
-        else if (cmp > 0) return get(x.right, key);
-        else return x.val;
+        if (cmp < 0)
+            return get(x.left, key);
+        else if (cmp > 0)
+            return get(x.right, key);
+        else
+            return x.val;
     }
 
     @Override
@@ -68,12 +78,16 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     private Node put(Node<Key, Value> x, Key key, Value val) {
-        if (x == null) return new Node(key, val, 1);
+        if (x == null)
+            return new Node(key, val, 1);
 
         int cmp = key.compareTo(x.key);
-        if (cmp < 0) x.left = put(x.left, key, val);
-        else if (cmp > 0) x.right = put(x.right, key, val);
-        else x.val = val;
+        if (cmp < 0)
+            x.left = put(x.left, key, val);
+        else if (cmp > 0)
+            x.right = put(x.right, key, val);
+        else
+            x.val = val;
         x.N = size(x.left) + size(x.right) + 1;
 
         return x;
@@ -81,43 +95,54 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
 
     @Override
     public Key min() {
-        if (root == null) throw new NoSuchElementException();
+        if (root == null)
+            throw new NoSuchElementException();
         return min(root).key;
     }
 
     private Node<Key, Value> min(Node x) {
-        if (x.left == null) return x;
+        if (x.left == null)
+            return x;
         return min(x.left);
     }
 
     @Override
     public Key max() {
-        if (root == null) throw new NoSuchElementException();
+        if (root == null)
+            throw new NoSuchElementException();
         return max(root).key;
     }
 
     private Node<Key, Value> max(Node x) {
-        if (x.right == null) return x;
+        if (x.right == null)
+            return x;
         return max(x.right);
     }
 
     @Override
     public Key floor(Key key) {
-        if (root == null) throw new NoSuchElementException();
+        if (root == null)
+            throw new NoSuchElementException();
 
         Node<Key, Value> x = floor(root, key);
-        if (x == null) return null;
+        if (x == null)
+            return null;
         return x.key;
     }
 
     private Node<Key, Value> floor(Node<Key, Value> x, Key key) {
-        if (x == null) return null;
+        if (x == null)
+            return null;
         int cmp = key.compareTo(x.key);
-        if (cmp == 0) return x;
-        if (cmp < 0) return floor(x.left, key);
+        if (cmp == 0)
+            return x;
+        if (cmp < 0)
+            return floor(x.left, key);
         Node<Key, Value> t = floor(x.right, key);
-        if (t != null) return t;
-        else return x;
+        if (t != null)
+            return t;
+        else
+            return x;
     }
 
     @Override
@@ -126,11 +151,15 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     private Node<Key, Value> select(Node x, int k) {
-        if (x == null) return null;
+        if (x == null)
+            return null;
         int t = size(x.left);
-        if (t > k) return select(x.left, k);
-        else if (t < k) return select(x.right, k - t - 1);
-        else return x;
+        if (t > k)
+            return select(x.left, k);
+        else if (t < k)
+            return select(x.right, k - t - 1);
+        else
+            return x;
     }
 
     @Override
@@ -140,21 +169,27 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
 
     private int rank(Key key, Node<Key, Value> x) {
         // Return number of keys less than x.key in the subtree rooted at x.
-        if (x == null) return 0;
+        if (x == null)
+            return 0;
         int cmp = key.compareTo(x.key);
-        if (cmp < 0) return rank(key, x.left);
-        else if (cmp > 0) return 1 + size(x.left) + rank(key, x.right);
-        else return size(x.left);
+        if (cmp < 0)
+            return rank(key, x.left);
+        else if (cmp > 0)
+            return 1 + size(x.left) + rank(key, x.right);
+        else
+            return size(x.left);
     }
 
     @Override
     public void deleteMin() {
-        if (root == null) throw new NoSuchElementException();
+        if (root == null)
+            throw new NoSuchElementException();
         root = deleteMin(root);
     }
 
     private Node<Key, Value> deleteMin(Node x) {
-        if (x.left == null) return x.right;
+        if (x.left == null)
+            return x.right;
         x.left = deleteMin(x.left);
         x.N = size(x.left) + size(x.right) + 1;
         return x;
@@ -166,13 +201,18 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     private Node<Key, Value> delete(Node<Key, Value> x, Key key) {
-        if (x == null) return null;
+        if (x == null)
+            return null;
         int cmp = key.compareTo(x.key);
-        if (cmp < 0) x.left = delete(x.left, key);
-        else if (cmp > 0) x.right = delete(x.right, key);
+        if (cmp < 0)
+            x.left = delete(x.left, key);
+        else if (cmp > 0)
+            x.right = delete(x.right, key);
         else {
-            if (x.right == null) return x.left;
-            if (x.left == null) return x.right;
+            if (x.right == null)
+                return x.left;
+            if (x.left == null)
+                return x.right;
             Node t = x;
             x = min(t.right);
             x.right = deleteMin(t.right);
@@ -184,8 +224,10 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
 
     @Override
     public Iterable<Key> keys() {
-        if (root == null) return new LinkedList<>();
-        else return keys(min(), max());
+        if (root == null)
+            return new LinkedList<>();
+        else
+            return keys(min(), max());
     }
 
     @Override
@@ -196,22 +238,28 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     private void keys(Node<Key, Value> x, Queue<Key> queue, Key lo, Key hi) {
-        if (x == null) return;
+        if (x == null)
+            return;
         int cmplo = lo.compareTo(x.key);
         int cmphi = hi.compareTo(x.key);
-        if (cmplo < 0) keys(x.left, queue, lo, hi);
-        if (cmplo <= 0 && cmphi >= 0) queue.add(x.key);
-        if (cmphi > 0) keys(x.right, queue, lo, hi);
+        if (cmplo < 0)
+            keys(x.left, queue, lo, hi);
+        if (cmplo <= 0 && cmphi >= 0)
+            queue.add(x.key);
+        if (cmphi > 0)
+            keys(x.right, queue, lo, hi);
     }
 
     /**
-     * Returns the smallest key in the symbol table greater than or equal to the given key.
+     * Returns the smallest key in the symbol table greater than or equal to the
+     * given key.
      *
      * @param key the key
-     * @return the smallest key in the symbol table greater than or equal to the given key
+     * @return the smallest key in the symbol table greater than or equal to the
+     *     given key
      */
     public Key ceiling(Key key) {
-        //SKIP, UNNEEDED
+        // SKIP, UNNEEDED
         return null;
     }
 
@@ -220,9 +268,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
      *
      * @return the root node of the binary search tree
      */
-    public Node getRoot() {
-        return root;
-    }
+    public Node getRoot() { return root; }
 
     /**
      * Checks if the binary search tree contains a specific key.
@@ -230,9 +276,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
      * @param key the key to check
      * @return true if the key is found in the binary search tree, false otherwise
      */
-    public boolean contains(Key key) {
-        return get(key) != null;
-    }
+    public boolean contains(Key key) { return get(key) != null; }
 
     /**
      * Checks if the binary search tree is empty.
@@ -252,7 +296,8 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
      */
     public void deleteMax() {
         // call the recursive method deleteMax
-        if (root == null) throw new NoSuchElementException();
+        if (root == null)
+            throw new NoSuchElementException();
         root = deleteMax(root);
     }
 
@@ -274,9 +319,11 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     /**
-     * Calculates the number of keys in the symbol table in the given range [lo, hi]. If lo is greater than hi,
-     * it returns 0. If hi is in the symbol table, it returns the difference between the rank of hi and the rank of lo plus 1.
-     * If hi is not in the symbol table, it returns the difference between the rank of hi and the rank of lo.
+     * Calculates the number of keys in the symbol table in the given range [lo,
+     * hi]. If lo is greater than hi, it returns 0. If hi is in the symbol table,
+     * it returns the difference between the rank of hi and the rank of lo plus 1.
+     * If hi is not in the symbol table, it returns the difference between the
+     * rank of hi and the rank of lo.
      *
      * @param lo the lower bound of the range
      * @param hi the upper bound of the range
@@ -294,7 +341,8 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     /**
-     * Inserts a key-value pair into the binary search tree. If the key already exists, updates the value.
+     * Inserts a key-value pair into the binary search tree. If the key already
+     * exists, updates the value.
      *
      * @param keyToAdd the key to insert
      * @param newValue the value associated with the key
@@ -335,7 +383,8 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     /**
-     * Returns the value paired with a key in the tree. Returns null if key does not exist.
+     * Returns the value paired with a key in the tree. Returns null if key does
+     * not exist.
      *
      * @param key the key to find
      * @return the value of the key, or null if key does not exist
@@ -359,13 +408,13 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
      * Balances the binary search tree.
      *
      * <p>
-     * The balance method performs the following steps to balance the binary search tree:
-     * <ol>
-     *   <li>Traverses the binary search tree to obtain a linked list of all nodes in the tree.</li>
-     *   <li>Rebuilds the binary search tree from the linked list, ensuring that the tree remains balanced.</li>
+     * The balance method performs the following steps to balance the binary
+     * search tree: <ol> <li>Traverses the binary search tree to obtain a linked
+     * list of all nodes in the tree.</li> <li>Rebuilds the binary search tree
+     * from the linked list, ensuring that the tree remains balanced.</li>
      * </ol>
-     * After the balance method is executed, the root of the binary search tree will be updated to point to the new
-     * root of the balanced tree.
+     * After the balance method is executed, the root of the binary search tree
+     * will be updated to point to the new root of the balanced tree.
      * </p>
      *
      * <p>Usage example:</p>
@@ -382,8 +431,9 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     /**
-     * Traversal method performs a recursive traversal of a binary search tree starting from a given node.
-     * It adds each node to a linked list in the order of the traversal.
+     * Traversal method performs a recursive traversal of a binary search tree
+     * starting from a given node. It adds each node to a linked list in the order
+     * of the traversal.
      *
      * @param x       the starting node of the traversal
      * @param nodes   the linked list to store the nodes in the traversal order
@@ -417,17 +467,19 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
     }
 
     /**
-     * Returns a string representation of the tree. The ordering is a level traversal of the tree,
-     * and each node's value is separated by a space. If there is no valid subtree rooted at the
-     * given key, returns "empty".
+     * Returns a string representation of the tree. The ordering is a level
+     * traversal of the tree, and each node's value is separated by a space. If
+     * there is no valid subtree rooted at the given key, returns "empty".
      *
      * @param key the key of the subtree to display
      * @return the level order string representation of the subtree
      * @throws IllegalArgumentException if the key is null
      */
     public String displayLevel(Key key) {
-        if (key == null) throw new IllegalArgumentException();
-        if (root == null) return "empty";
+        if (key == null)
+            throw new IllegalArgumentException();
+        if (root == null)
+            return "empty";
         StringBuilder temp = new StringBuilder();
         Queue<Node<Key, Value>> queue = new LinkedList<>();
         Node<Key, Value> currentNode = getNode(key);
@@ -452,9 +504,7 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
      * @param key the key to search for
      * @return the node with the specified key, or null if not found
      */
-    private Node<Key, Value> getNode(Key key) {
-        return getNode(root, key);
-    }
+    private Node<Key, Value> getNode(Key key) { return getNode(root, key); }
 
     /**
      * Retrieves the node with the specified key in the binary search tree.
@@ -464,11 +514,15 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
      * @return the node with the specified key, or null if not found
      */
     private Node<Key, Value> getNode(Node<Key, Value> x, Key key) {
-        if (x == null || key == null) return null;
+        if (x == null || key == null)
+            return null;
         int cmp = key.compareTo(x.key);
-        if (cmp < 0) return getNode(x.left, key);
-        else if (cmp > 0) return getNode(x.right, key);
-        else return x;
+        if (cmp < 0)
+            return getNode(x.left, key);
+        else if (cmp > 0)
+            return getNode(x.right, key);
+        else
+            return x;
     }
 
     /**
@@ -487,10 +541,10 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> implements BST
         bst.put(7, "SEVEN");
 
         System.out.println("Before balance:");
-        System.out.println(bst.displayLevel(10)); //root
+        System.out.println(bst.displayLevel(10)); // root
 
         System.out.println("After balance:");
         bst.balance();
-        System.out.println(bst.displayLevel(5)); //root
+        System.out.println(bst.displayLevel(5)); // root
     }
 }

@@ -1,0 +1,21 @@
+enabled : true
+exclude : "gradlew*"  # Exclude gradlew and gradlew.bat
+also_exclude: []
+changed_paths:
+    maximum: 1000
+    outcome: error
+auto: false
+commit_template: |
+    Restyled by ${restyler.name} ${restyler.version}
+pull_requests: true
+comments: false
+statuses:
+    skipped: true         # Green when skipped
+    differences: true     # Red when style differences are found
+    no_differences: true  # Green when no differences are found
+    error: true           # Red when an error occurs
+request_review: author
+restylers_version: stable
+restylers:
+    - prettier
+    - "*"  # All other restylers

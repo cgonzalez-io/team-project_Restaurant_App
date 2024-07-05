@@ -1,15 +1,15 @@
 package restaurant;
 
+import java.util.Scanner;
+import restaurant.manager.CustomerManager;
 import restaurant.manager.ReservationManager;
 import restaurant.manager.ReservesManager;
-import restaurant.manager.CustomerManager;
-
-import java.util.Scanner;
 
 public class ReservationApp {
 
     private static Scanner scan = new Scanner(System.in);
-    private static ReservationManager reservationManager = new ReservationManager();
+    private static ReservationManager reservationManager =
+        new ReservationManager();
     private static CustomerManager customerManager = new CustomerManager();
     private static ReservesManager reservesManager = new ReservesManager();
 

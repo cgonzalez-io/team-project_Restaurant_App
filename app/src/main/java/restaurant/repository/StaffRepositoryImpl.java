@@ -11,12 +11,11 @@ public class StaffRepositoryImpl implements StaffRepository {
 
     @Override
     public void insert(Staff staff) throws SQLException {
-        String sql =
-            "INSERT INTO Staff (FirstName, LastName, Role, PhoneNumber, Email, Address) VALUES (?, ?, ?, ?, ?, ?)";
-        try (
-            Connection conn = DatabaseUtil.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)
-        ) {
+        String sql = "INSERT INTO Staff (FirstName, LastName, Role, PhoneNumber, "
+            + "Email, Address) VALUES (?, ?, ?, ?, ?, ?)";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt =
+                 conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             pstmt.setString(1, staff.getFirstName());
             pstmt.setString(2, staff.getLastName());
             pstmt.setString(3, staff.getRole());
@@ -35,9 +34,10 @@ public class StaffRepositoryImpl implements StaffRepository {
 
     @Override
     public void update(Staff staff) throws SQLException {
-        String sql =
-            "UPDATE Staff SET FirstName = ?, LastName = ?, Role = ?, PhoneNumber = ?, Email = ?, Address = ? WHERE StaffID = ?";
-        try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        String sql = "UPDATE Staff SET FirstName = ?, LastName = ?, Role = ?, "
+            + "PhoneNumber = ?, Email = ?, Address = ? WHERE StaffID = ?";
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, staff.getFirstName());
             pstmt.setString(2, staff.getLastName());
             pstmt.setString(3, staff.getRole());
@@ -52,20 +52,16 @@ public class StaffRepositoryImpl implements StaffRepository {
     @Override
     public Staff findById(int staffId) throws SQLException {
         String sql = "SELECT * FROM Staff WHERE StaffID = ?";
-        try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, staffId);
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
-                    return new Staff(
-                        rs.getInt("StaffID"),
-                        rs.getString("FirstName"),
+                    return new Staff(rs.getInt("StaffID"), rs.getString("FirstName"),
                         rs.getString("LastName"),
                         Long.parseLong(rs.getString("PhoneNumber")),
-                        rs.getString("Email"),
-                        rs.getString("Address"),
-                        rs.getString("Role"),
-                        null
-                    );
+                        rs.getString("Email"), rs.getString("Address"),
+                        rs.getString("Role"), null);
                 } else {
                     return null;
                 }
@@ -74,9 +70,10 @@ public class StaffRepositoryImpl implements StaffRepository {
     }
 
     @Override
-    public void delete(int staffId) throws SQLException {
+    public void delete(int staffId)throws SQLException {
         String sql = "DELETE FROM Staff WHERE StaffID = ?";
-        try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        try (Connection conn = DatabaseUtil.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setInt(1, staffId);
             pstmt.executeUpdate();
         }
@@ -86,24 +83,15 @@ public class StaffRepositoryImpl implements StaffRepository {
     public List<Staff> findAll() throws SQLException {
         String sql = "SELECT * FROM Staff";
         List<Staff> staffList = new ArrayList<>();
-        try (
-            Connection conn = DatabaseUtil.getConnection();
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)
-        ) {
+        try (Connection conn = DatabaseUtil.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
-                staffList.add(
-                    new Staff(
-                        rs.getInt("StaffID"),
-                        rs.getString("FirstName"),
-                        rs.getString("LastName"),
-                        Long.parseLong(rs.getString("PhoneNumber")),
-                        rs.getString("Email"),
-                        rs.getString("Address"),
-                        rs.getString("Role"),
-                        null
-                    )
-                );
+                staffList.add(new Staff(rs.getInt("StaffID"), rs.getString("FirstName"),
+                    rs.getString("LastName"),
+                    Long.parseLong(rs.getString("PhoneNumber")),
+                    rs.getString("Email"), rs.getString("Address"),
+                    rs.getString("Role"), null));
             }
         }
         return staffList;

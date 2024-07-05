@@ -8,7 +8,8 @@ import java.util.NoSuchElementException;
  * @param <Key>   search key
  * @param <Value> return type
  */
-public interface OrderedSymbolTable<Key, Value> extends SymbolTable<Key, Value> {
+public interface OrderedSymbolTable<Key, Value>
+    extends SymbolTable<Key, Value> {
     /**
      * Returns the minimum key.
      *
@@ -26,7 +27,8 @@ public interface OrderedSymbolTable<Key, Value> extends SymbolTable<Key, Value> 
     Key max();
 
     /**
-     * Returns largest key less than or equal to key. If no such key exists, returns null.
+     * Returns largest key less than or equal to key. If no such key exists,
+     * returns null.
      *
      * @param key target floor
      * @return closest key
@@ -35,7 +37,8 @@ public interface OrderedSymbolTable<Key, Value> extends SymbolTable<Key, Value> 
     Key floor(Key key);
 
     /**
-     * Returns smallest key greater than or equal to key. If no such key exists, returns null.
+     * Returns smallest key greater than or equal to key. If no such key exists,
+     * returns null.
      *
      * @param key target floor
      * @return closest key
