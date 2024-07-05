@@ -12,8 +12,8 @@ public class RestaurantTableRepositoryImpl
 
   @Override
   public void insert(RestaurantTable table) throws SQLException {
-    String sql = "INSERT INTO RESTAURANTTABLE (TableID, TableNumber, "
-                 + "SeatingCapacity) VALUES (?, ?, ?)";
+    String sql = "INSERT INTO TABLE_INFO (Table_ID, Table_Number, "
+                 + "Seating_Capacity) VALUES (?, ?, ?)";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, table.getTableID());
@@ -25,8 +25,8 @@ public class RestaurantTableRepositoryImpl
 
   @Override
   public void update(RestaurantTable table) throws SQLException {
-    String sql = "UPDATE RESTAURANTTABLE SET TableNumber = ?, "
-                 + "SeatingCapacity = ? WHERE TableID = ?";
+    String sql = "UPDATE TABLE_INFO SET Table_Number = ?, Seating_Capacity = "
+                 + "? WHERE Table_ID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, table.getTableNumber());
@@ -38,15 +38,15 @@ public class RestaurantTableRepositoryImpl
 
   @Override
   public RestaurantTable findById(int tableID) throws SQLException {
-    String sql = "SELECT * FROM RESTAURANTTABLE WHERE TableID = ?";
+    String sql = "SELECT * FROM TABLE_INFO WHERE Table_ID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, tableID);
       try (ResultSet rs = pstmt.executeQuery()) {
         if (rs.next()) {
-          return new RestaurantTable(rs.getInt("TableID"),
-                                     rs.getInt("TableNumber"),
-                                     rs.getInt("SeatingCapacity"));
+          return new RestaurantTable(rs.getInt("Table_ID"),
+                                     rs.getInt("Table_Number"),
+                                     rs.getInt("Seating_Capacity"));
         } else {
           return null;
         }
@@ -56,7 +56,7 @@ public class RestaurantTableRepositoryImpl
 
   @Override
   public void delete(int tableID)throws SQLException {
-    String sql = "DELETE FROM RESTAURANTTABLE WHERE TableID = ?";
+    String sql = "DELETE FROM TABLE_INFO WHERE Table_ID = ?";
     try (Connection conn = DatabaseUtil.getConnection();
          PreparedStatement pstmt = conn.prepareStatement(sql)) {
       pstmt.setInt(1, tableID);
@@ -66,15 +66,15 @@ public class RestaurantTableRepositoryImpl
 
   @Override
   public List<RestaurantTable> findAll() throws SQLException {
-    String sql = "SELECT * FROM RESTAURANTTABLE";
+    String sql = "SELECT * FROM TABLE_INFO";
     List<RestaurantTable> tables = new ArrayList<>();
     try (Connection conn = DatabaseUtil.getConnection();
          Statement stmt = conn.createStatement();
          ResultSet rs = stmt.executeQuery(sql)) {
       while (rs.next()) {
-        tables.add(new RestaurantTable(rs.getInt("TableID"),
-                                       rs.getInt("TableNumber"),
-                                       rs.getInt("SeatingCapacity")));
+        tables.add(new RestaurantTable(rs.getInt("Table_ID"),
+                                       rs.getInt("Table_Number"),
+                                       rs.getInt("Seating_Capacity")));
       }
     }
     return tables;
