@@ -25,8 +25,9 @@ class CustomerTest {
 
   @Test
   public void unit_test_initializes_customer_with_valid_inputs() {
-    ContactNode nextNode = new ContactNode(
-        "Jane", "Doe", "1234567890", "jane.doe@example.com", "123 Main St", null);
+    ContactNode nextNode =
+        new ContactNode("Jane", "Doe", "1234567890", "jane.doe@example.com",
+                        "123 Main St", null);
     Customer customer =
         new Customer(1, "John", "Doe", "9876543210L", "john.doe@example.com",
                      "456 Elm St", nextNode);
@@ -42,8 +43,9 @@ class CustomerTest {
 
   @Test
   public void unit_test_initializes_customer_with_customerID_zero() {
-    ContactNode nextNode = new ContactNode(
-        "Jane", "Doe", "1234567890", "jane.doe@example.com", "123 Main St", null);
+    ContactNode nextNode =
+        new ContactNode("Jane", "Doe", "1234567890", "jane.doe@example.com",
+                        "123 Main St", null);
     Customer customer =
         new Customer(0, "John", "Doe", "9876543210L", "john.doe@example.com",
                      "456 Elm St", nextNode);
@@ -93,8 +95,9 @@ class CustomerTest {
 
   @Test
   public void unit_test_correct_string_format_fully_populated_customer() {
-    ContactNode nextNode = new ContactNode(
-        "Jane", "Doe", "1234567890", "jane.doe@example.com", "123 Main St", null);
+    ContactNode nextNode =
+        new ContactNode("Jane", "Doe", "1234567890", "jane.doe@example.com",
+                        "123 Main St", null);
     Customer customer =
         new Customer(1, "John", "Smith", "987654321", "john.smith@example.com",
                      "456 Elm St", nextNode);
