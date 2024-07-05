@@ -42,4 +42,3 @@ FROM
     Reservation
 WHERE
     CustomerID = 1;
-
