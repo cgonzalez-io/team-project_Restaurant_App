@@ -10,14 +10,14 @@ package restaurant.search;
  */
 public class Node<Key, Value> {
 
-    public final Key key;
-    public Value val;
-    public Node<Key, Value> left, right;
-    public int N;
+  public final Key key;
+  public Value val;
+  public Node<Key, Value> left, right;
+  public int N;
 
-    public Node(Key key, Value val, int N) {
-        this.key = key;
-        this.val = val;
-        this.N = N;
-    }
+  public Node(Key key, Value val, int N) {
+    this.key = key;
+    this.val = val;
+    this.N = N;
+  }
 }

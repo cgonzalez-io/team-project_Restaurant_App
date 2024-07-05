@@ -6,13 +6,13 @@ import restaurant.entity.ReservationTable;
 import restaurant.entity.RestaurantTable;
 
 public interface ReservesRepository {
-    void insert(ReservationTable reserve) throws SQLException;
+  void insert(ReservationTable reserve) throws SQLException;
 
-    void update(ReservationTable reserve) throws SQLException;
+  void update(ReservationTable reserve) throws SQLException;
 
-    void delete(int reservationId, int tableId)throws SQLException;
+  void delete(int reservationId, int tableId)throws SQLException;
 
-    ReservationTable findById(int reservationId, int tableId) throws SQLException;
+  ReservationTable findById(int reservationId, int tableId) throws SQLException;
 
-    List<ReservationTable> findAll() throws SQLException;
+  List<ReservationTable> findAll() throws SQLException;
 }
