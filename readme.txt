@@ -8,6 +8,14 @@ https://hub.docker.com/_/mysql refer to this link for more information on the my
     a. run the docker container using the command docker run -d -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=root mysql:latest
     or
     b. use the docker configuration file in the project to run the docker container.
+4. Setting up testing environment
+    a.  CREATE USER 'test_user'@'localhost' IDENTIFIED BY 'password';
+        GRANT ALL PRIVILEGES ON *.* TO 'test_user'@'localhost';
+        //this will setup the main test user
+    b. Run docker with the following configuration
+        Command:
+        docker run -p 3306:3306 --env MYSQL_DATABASE=myDB --env MYSQL_ROOT_PASSWORD=password --env MYSQL_USER=admin --env 
+        MYSQL_PASSWORD=admin --name RestaurantDB --pull missing mysql:8.3 --default-authentication-plugin=mysql_native_password
 
 Project Description:
 This project implements a database system for managing restaurant reservations, customers, tables, and staff.
