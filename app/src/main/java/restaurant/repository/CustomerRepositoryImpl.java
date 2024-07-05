@@ -63,8 +63,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
         if (rs.next()) {
           return new Customer(
               rs.getInt("CustomerID"), rs.getString("FirstName"),
-              rs.getString("LastName"),
-              rs.getString("PhoneNumber"),
+              rs.getString("LastName"), rs.getString("PhoneNumber"),
               rs.getString("Email"), rs.getString("Address"), null);
         } else {
           return null;
@@ -93,8 +92,7 @@ public class CustomerRepositoryImpl implements CustomerRepository {
       while (rs.next()) {
         customers.add(
             new Customer(rs.getInt("CustomerID"), rs.getString("FirstName"),
-                         rs.getString("LastName"),
-                         rs.getString("PhoneNumber"),
+                         rs.getString("LastName"), rs.getString("PhoneNumber"),
                          rs.getString("Email"), rs.getString("Address"), null));
       }
     }
