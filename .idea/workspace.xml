@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion.">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,8 +176,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ReservationApp" />
         <item itemvalue="Gradle.Assignment-Template [build]" />
+        <item itemvalue="Application.ReservationApp" />
         <item itemvalue="Gradle.Assignment-Template [run]" />
         <item itemvalue="Gradle.Assignment-Template [clean]" />
       </list>
@@ -209,7 +208,7 @@
       <option name="presentableId" value="Default" />
       <updated>1720182582408</updated>
       <workItem from="1720182584323" duration="444000" />
-      <workItem from="1720228091352" duration="4670000" />
+      <workItem from="1720228091352" duration="5166000" />
     </task>
     <task id="LOCAL-00002" summary="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
       <option name="closed" value="true" />
@@ -235,18 +234,68 @@
       <option name="project" value="LOCAL" />
       <updated>1720230865782</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion.">
+      <option name="closed" value="true" />
+      <created>1720233383097</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1720233383097</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="b8a8fe70-4ed3-49d1-aff7-8c0017c98a2c" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
             <State />
+          </value>
+        </entry>
+        <entry key="b8a8fe70-4ed3-49d1-aff7-8c0017c98a2c">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:/home/abaddon/IdeaProjects/Assignment-Template/app/src/main/java/restaurant/sql/db_insert" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
           </value>
         </entry>
       </map>
@@ -259,6 +308,7 @@
     <MESSAGE value="Enhance manager classes, add new manager and fix input issues&#10;&#10;Enhancements include updates to existing manager classes for staff, reservations and tables, introducing additional options such as staff and table management functions. A new manager, AssignmentManager, has also been added for better organization. Made corrections to inputs where problematic cases may occur, like entering non-numeric values for numeric entries." />
     <MESSAGE value="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database." />
     <MESSAGE value="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database." />
+    <MESSAGE value="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion." />
   </component>
 </project>

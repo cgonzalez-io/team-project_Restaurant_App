@@ -64,18 +64,14 @@ public class ReservationManager {
     }
 
     private static void insert() throws SQLException {
-        System.out.println(
-            "Enter reservation ID, customer ID,number of people, " + "time (hh:mm:ss), and date (yyyy-mm-dd):"
-        );
-
-        int reservationID = scan.nextInt();
+        System.out.println("Enter the customer ID,number of people, " + "time (hh:mm:ss), and date (yyyy-mm-dd):");
         int customerID = scan.nextInt();
         int numberOfPeople = scan.nextInt();
         Time time = Time.valueOf(scan.next());
         Date date = Date.valueOf(scan.next());
         scan.nextLine();
 
-        Reservation reservation = new Reservation(reservationID, customerID, date, time, numberOfPeople);
+        Reservation reservation = new Reservation(customerID, date, time, numberOfPeople);
         reservationRepository.insert(reservation);
     }
 

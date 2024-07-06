@@ -72,9 +72,8 @@ public class CustomerManager {
     }
 
     private static void insert() throws SQLException {
-        System.out.println("Enter customer ID, first name, last name, phone " + "number, email, and address:");
+        System.out.println("Enter First name, last name, phone " + "number, email, and address:");
 
-        int customerID = scan.nextInt();
         String firstName = scan.next();
         String lastName = scan.next();
         String phoneNumber = scan.next();
@@ -82,7 +81,7 @@ public class CustomerManager {
         scan.nextLine();
         String address = scan.nextLine().trim();
 
-        Customer customer = new Customer(customerID, firstName, lastName, phoneNumber, email, address);
+        Customer customer = new Customer(firstName, lastName, phoneNumber, email, address);
         customerRepository.insert(customer);
     }
 
