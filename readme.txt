@@ -49,9 +49,8 @@ Video URL:
 
 Instructions:
 1. Run the scripts in the following order:
-   - `restaurant_team_number_create.sql`
-   - `restaurant_team_number_insert.sql`
-   - `restaurant_team_number_select.sql`
+   - `createFinal.sql`
+   - `insertFinal.sql`
 2. Follow the instructions in the video for a detailed explanation of the project.
 
 Thank you!
