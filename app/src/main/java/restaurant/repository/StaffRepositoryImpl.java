@@ -48,6 +48,11 @@ public class StaffRepositoryImpl implements StaffRepository {
             pstmt.setString(6, staff.getAddress());
             pstmt.setInt(7, staff.getStaffId());
             pstmt.executeUpdate();
+
+            int affectedRows = pstmt.executeUpdate();
+            if (affectedRows == 0) {
+                throw new SQLException("Staff with ID " + staff.getStaffId() + " does not exist.");
+            }
         }
     }
 

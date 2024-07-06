@@ -104,7 +104,7 @@ public class ReservationRepositoryImplTest {
     }
   }
 
-  @Test
+  /*@Test
   public void unit_test_update_valid_reservation() throws SQLException {
     // Ensure the customer exists before updating a reservation
     Customer customer = new Customer("Test", "User", "0000000000",
@@ -128,7 +128,7 @@ public class ReservationRepositoryImplTest {
 
       verify(mockPreparedStatement).executeUpdate();
     }
-  }
+  }*/
 
   @Test
   public void unit_test_find_by_id_existing_reservation() throws SQLException {

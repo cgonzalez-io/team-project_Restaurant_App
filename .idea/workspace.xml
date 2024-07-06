@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Remove manual ID input from Customer and Reservation insertion&#10;&#10;The CustomerManager and ReservationManager classes have been updated to no longer require manual input of the customer and reservation IDs. This enhances the automation of ID assignment in the database, simplifying the data entry process for better user experience.">
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Update database field names and add new constructor&#10;&#10;Database field names have been made more consistent across the codebase with changes made in the StaffRepositoryImpl class. The ContactNode entity now has an additional constructor that does not require a 'next' argument. A minor change has also been made in insertFinal.sql to the values inserted.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/CustomerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/CustomerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/interfaces/StaffAssignmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/interfaces/StaffAssignmentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservationRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservationRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservesRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservesRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/RestaurantTableRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/RestaurantTableRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffAssignmentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffAssignmentRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservationRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservationRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/StaffAssignmentRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/StaffAssignmentRepositoryImplTest.java" afterDir="false" />
     </list>
+    <list id="42dc42ba-b636-4e34-9dd6-dfe660c70e62" name="Changes by indaiei" comment="" />
+    <list id="ba8591d2-1a49-4c2b-a2ea-fac912eff0fa" name="Changes by sunny" comment="" />
+    <list id="c29e98b1-a431-4c1a-a813-c3b0b3755c43" name="Changes by tmc13" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,6 +77,34 @@
       </list>
     </option>
   </component>
+  <component name="IlluminatedCloudWorkspaceSettings">
+    <option name="projectWorkspaceSettings">
+      <ProjectWorkspaceSettings>
+        <option name="anonymousApexSettings">
+          <AnonymousApexSettings>
+            <option name="savedDocuments">
+              <list>
+                <AnonymousApexSavedDocument>
+                  <option name="name" value="Anonymous Apex 1" />
+                </AnonymousApexSavedDocument>
+              </list>
+            </option>
+          </AnonymousApexSettings>
+        </option>
+        <option name="soqlQuerySettings">
+          <SoqlQuerySettings>
+            <option name="savedDocuments">
+              <list>
+                <SoqlQuerySavedDocument>
+                  <option name="name" value="SOQL Query 1" />
+                </SoqlQuerySavedDocument>
+              </list>
+            </option>
+          </SoqlQuerySettings>
+        </option>
+      </ProjectWorkspaceSettings>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -83,6 +123,11 @@
     "Gradle.Assignment-Template:app [:app:ReservationApp.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
     "com.google.cloudcode.ide_session_index": "20240705_0001",
     "git-widget-placeholder": "deliverable-4",
     "kotlin-language-version-configured": "true",
@@ -95,7 +140,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.ReservationApp">
+  <component name="RunManager" selected="Gradle.Assignment-Template [build]">
     <configuration name="ReservationApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="restaurant.ReservationApp" />
       <module name="app.RestaurantDB.app.main" />
@@ -209,7 +254,7 @@
       <option name="presentableId" value="Default" />
       <updated>1720182582408</updated>
       <workItem from="1720182584323" duration="444000" />
-      <workItem from="1720228091352" duration="7228000" />
+      <workItem from="1720228091352" duration="14535000" />
     </task>
     <task id="LOCAL-00002" summary="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
       <option name="closed" value="true" />
@@ -251,7 +296,31 @@
       <option name="project" value="LOCAL" />
       <updated>1720233863519</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Update README and add comments to CustomerRepositoryImpl&#10;&#10;The README file's docker command has been updated to reflect the change in the MySQL password. Also, comments have been added to the insert method in the CustomerRepositoryImpl file for better understanding of the code functionality. Changes in the .idea/workspace.xml aim to enhance code organization and update commit messages.">
+      <option name="closed" value="true" />
+      <created>1720235719954</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1720235719954</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update SQL script instructions in README&#10;&#10;The execution order of the SQL scripts in the project instructions section of the README was updated. The scripts `restaurant_team_number_create.sql`, `restaurant_team_number_insert.sql`, and `restaurant_team_number_select.sql` were replaced with `createFinal.sql` and `insertFinal.sql`.">
+      <option name="closed" value="true" />
+      <created>1720235799168</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720235799168</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update database field names and add new constructor&#10;&#10;Database field names have been made more consistent across the codebase with changes made in the StaffRepositoryImpl class. The ContactNode entity now has an additional constructor that does not require a 'next' argument. A minor change has also been made in insertFinal.sql to the values inserted.">
+      <option name="closed" value="true" />
+      <created>1720236539999</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720236539999</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,6 +388,9 @@
     <MESSAGE value="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database." />
     <MESSAGE value="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion." />
     <MESSAGE value="Remove manual ID input from Customer and Reservation insertion&#10;&#10;The CustomerManager and ReservationManager classes have been updated to no longer require manual input of the customer and reservation IDs. This enhances the automation of ID assignment in the database, simplifying the data entry process for better user experience." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove manual ID input from Customer and Reservation insertion&#10;&#10;The CustomerManager and ReservationManager classes have been updated to no longer require manual input of the customer and reservation IDs. This enhances the automation of ID assignment in the database, simplifying the data entry process for better user experience." />
+    <MESSAGE value="Update README and add comments to CustomerRepositoryImpl&#10;&#10;The README file's docker command has been updated to reflect the change in the MySQL password. Also, comments have been added to the insert method in the CustomerRepositoryImpl file for better understanding of the code functionality. Changes in the .idea/workspace.xml aim to enhance code organization and update commit messages." />
+    <MESSAGE value="Update SQL script instructions in README&#10;&#10;The execution order of the SQL scripts in the project instructions section of the README was updated. The scripts `restaurant_team_number_create.sql`, `restaurant_team_number_insert.sql`, and `restaurant_team_number_select.sql` were replaced with `createFinal.sql` and `insertFinal.sql`." />
+    <MESSAGE value="Update database field names and add new constructor&#10;&#10;Database field names have been made more consistent across the codebase with changes made in the StaffRepositoryImpl class. The ContactNode entity now has an additional constructor that does not require a 'next' argument. A minor change has also been made in insertFinal.sql to the values inserted." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update database field names and add new constructor&#10;&#10;Database field names have been made more consistent across the codebase with changes made in the StaffRepositoryImpl class. The ContactNode entity now has an additional constructor that does not require a 'next' argument. A minor change has also been made in insertFinal.sql to the values inserted." />
   </component>
 </project>

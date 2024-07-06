@@ -98,6 +98,7 @@ public class AssignmentManager {
             int tableID = Integer.parseInt(scan.nextLine());
             Date date = Date.valueOf(scan.nextLine());
             Time time = Time.valueOf(scan.nextLine());
+            StaffAssignment oldAssignment = repository.findById(staffID, tableID, date, time);
             System.out.println(
                 "Enter new Staff ID, new Table ID, new Date " + "(yyyy-mm-dd), and new Time (hh:mm:ss):"
             );
@@ -105,9 +106,8 @@ public class AssignmentManager {
             int newTableID = Integer.parseInt(scan.nextLine());
             Date newDate = Date.valueOf(scan.nextLine());
             Time newTime = Time.valueOf(scan.nextLine());
-            StaffAssignment assignment = new StaffAssignment(newStaffID, newTableID, newDate, newTime);
-            repository.update(assignment);
-            repository.delete(staffID, tableID, date, time);
+            StaffAssignment newAssignment = new StaffAssignment(newStaffID, newTableID, newDate, newTime);
+            repository.update(oldAssignment, newAssignment);
             System.out.println("Staff assignment updated successfully.");
         } catch (NumberFormatException e) {
             System.out.println("Invalid input. Please enter valid data.");

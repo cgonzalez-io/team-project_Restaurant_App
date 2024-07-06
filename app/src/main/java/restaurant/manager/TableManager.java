@@ -65,12 +65,13 @@ public class TableManager {
     }
 
     private void insertTable() throws SQLException {
-        System.out.println("Please enter a table number and seating capacity:");
+        System.out.println("Please enter a table ID, table number and seating capacity:");
+        int tableID = scan.nextInt();
         int tableNumber = scan.nextInt();
         int seatingCapacity = scan.nextInt();
         scan.nextLine();
 
-        RestaurantTable newTable = new RestaurantTable(0, tableNumber, seatingCapacity);
+        RestaurantTable newTable = new RestaurantTable(tableID, tableNumber, seatingCapacity);
         tableRepository.insert(newTable);
     }
 
