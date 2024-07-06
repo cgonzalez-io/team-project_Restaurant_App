@@ -4,22 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Update database field names and add new constructor&#10;&#10;Database field names have been made more consistent across the codebase with changes made in the StaffRepositoryImpl class. The ContactNode entity now has an additional constructor that does not require a 'next' argument. A minor change has also been made in insertFinal.sql to the values inserted.">
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Update methods in StaffAssignmentRepository and fix code formatting&#10;&#10;Updated the update method in StaffAssignmentRepository to accept two parameters: oldAssignment and newAssignment. Previously, the update method only accepted a single StaffAssignment parameter. Also, deleted a unit test in ReservationRepositoryImplTest and adjusted the overall code formatting for better readability.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/interfaces/StaffAssignmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/interfaces/StaffAssignmentRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservationRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservationRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservesRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/ReservesRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/RestaurantTableRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/RestaurantTableRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffAssignmentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffAssignmentRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservationRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservationRepositoryImplTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/StaffAssignmentRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/StaffAssignmentRepositoryImplTest.java" afterDir="false" />
     </list>
     <list id="42dc42ba-b636-4e34-9dd6-dfe660c70e62" name="Changes by indaiei" comment="" />
     <list id="ba8591d2-1a49-4c2b-a2ea-fac912eff0fa" name="Changes by sunny" comment="" />
-    <list id="c29e98b1-a431-4c1a-a813-c3b0b3755c43" name="Changes by tmc13" comment="" />
+    <list id="c29e98b1-a431-4c1a-a813-c3b0b3755c43" name="Changes by tmc13" comment="">
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffAssignmentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/StaffAssignmentRepositoryImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +48,17 @@
                 <item name="RestaurantDB" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RestaurantDB" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RestaurantDB" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -105,6 +110,31 @@
       </ProjectWorkspaceSettings>
     </option>
   </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java">
+      <ranges>
+        <range start1="74" end1="75" start2="74" end2="75" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="77" end1="77" start2="77" end2="78" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="78" end1="79" start2="79" end2="79" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="81" end1="82" start2="81" end2="83" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="94" end1="95" start2="95" end2="96" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="96" end1="97" start2="97" end2="97" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="98" end1="98" start2="98" end2="99" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="100" end1="101" start2="101" end2="102" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="104" end1="105" start2="105" end2="105" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="106" end1="106" start2="106" end2="107" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="108" end1="109" start2="109" end2="110" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="121" end1="122" start2="122" end2="123" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="124" end1="125" start2="125" end2="125" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="126" end1="126" start2="126" end2="127" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="128" end1="129" start2="129" end2="130" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="140" end1="141" start2="141" end2="142" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="143" end1="144" start2="144" end2="144" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="145" end1="145" start2="145" end2="146" changelist="bc751db8-20e8-4a4c-826e-95207e69ebe3" />
+        <range start1="147" end1="148" start2="148" end2="149" changelist="c29e98b1-a431-4c1a-a813-c3b0b3755c43" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -117,8 +147,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Database Script.insertFinal.sql.executor": "Run",
     "Gradle.Assignment-Template [build].executor": "Run",
     "Gradle.Assignment-Template [clean].executor": "Run",
+    "Gradle.Assignment-Template [compileJava].executor": "Run",
     "Gradle.Assignment-Template [run].executor": "Run",
     "Gradle.Assignment-Template:app [:app:ReservationApp.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -138,9 +170,14 @@
     "prettierjs.PrettierConfiguration.Package": "/home/abaddon/IdeaProjects/Assignment-Template/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "RunConfigurationTargetLRU": [
+      "75f6afca-2429-4147-b19c-df68e35cf46b/schema/\"RestaurantDB\""
+    ]
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.Assignment-Template [build]">
+  <component name="RunManager" selected="Gradle.Assignment-Template [compileJava]">
     <configuration name="ReservationApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="restaurant.ReservationApp" />
       <module name="app.RestaurantDB.app.main" />
@@ -153,6 +190,12 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="insertFinal.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/app/src/main/java/restaurant/sql/db_insert/insertFinal.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="75f6afca-2429-4147-b19c-df68e35cf46b" namespace="schema/&quot;RestaurantDB&quot;" />
+      <method v="2" />
     </configuration>
     <configuration name="Assignment-Template [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -198,18 +241,18 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Assignment-Template [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Assignment-Template [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--stacktrace" />
+        <option name="scriptParameters" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="run" />
+            <option value="compileJava" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -222,10 +265,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Assignment-Template [compileJava]" />
+        <item itemvalue="Database Script.insertFinal.sql" />
         <item itemvalue="Gradle.Assignment-Template [build]" />
         <item itemvalue="Gradle.Assignment-Template [clean]" />
         <item itemvalue="Application.ReservationApp" />
-        <item itemvalue="Gradle.Assignment-Template [run]" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +298,7 @@
       <option name="presentableId" value="Default" />
       <updated>1720182582408</updated>
       <workItem from="1720182584323" duration="444000" />
-      <workItem from="1720228091352" duration="14535000" />
+      <workItem from="1720228091352" duration="17724000" />
     </task>
     <task id="LOCAL-00002" summary="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
       <option name="closed" value="true" />
@@ -320,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720236539999</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update methods in StaffAssignmentRepository and fix code formatting&#10;&#10;Updated the update method in StaffAssignmentRepository to accept two parameters: oldAssignment and newAssignment. Previously, the update method only accepted a single StaffAssignment parameter. Also, deleted a unit test in ReservationRepositoryImplTest and adjusted the overall code formatting for better readability.">
+      <option name="closed" value="true" />
+      <created>1720243078667</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1720243078667</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,6 +443,7 @@
     <MESSAGE value="Update README and add comments to CustomerRepositoryImpl&#10;&#10;The README file's docker command has been updated to reflect the change in the MySQL password. Also, comments have been added to the insert method in the CustomerRepositoryImpl file for better understanding of the code functionality. Changes in the .idea/workspace.xml aim to enhance code organization and update commit messages." />
     <MESSAGE value="Update SQL script instructions in README&#10;&#10;The execution order of the SQL scripts in the project instructions section of the README was updated. The scripts `restaurant_team_number_create.sql`, `restaurant_team_number_insert.sql`, and `restaurant_team_number_select.sql` were replaced with `createFinal.sql` and `insertFinal.sql`." />
     <MESSAGE value="Update database field names and add new constructor&#10;&#10;Database field names have been made more consistent across the codebase with changes made in the StaffRepositoryImpl class. The ContactNode entity now has an additional constructor that does not require a 'next' argument. A minor change has also been made in insertFinal.sql to the values inserted." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update database field names and add new constructor&#10;&#10;Database field names have been made more consistent across the codebase with changes made in the StaffRepositoryImpl class. The ContactNode entity now has an additional constructor that does not require a 'next' argument. A minor change has also been made in insertFinal.sql to the values inserted." />
+    <MESSAGE value="Update methods in StaffAssignmentRepository and fix code formatting&#10;&#10;Updated the update method in StaffAssignmentRepository to accept two parameters: oldAssignment and newAssignment. Previously, the update method only accepted a single StaffAssignment parameter. Also, deleted a unit test in ReservationRepositoryImplTest and adjusted the overall code formatting for better readability." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update methods in StaffAssignmentRepository and fix code formatting&#10;&#10;Updated the update method in StaffAssignmentRepository to accept two parameters: oldAssignment and newAssignment. Previously, the update method only accepted a single StaffAssignment parameter. Also, deleted a unit test in ReservationRepositoryImplTest and adjusted the overall code formatting for better readability." />
   </component>
 </project>

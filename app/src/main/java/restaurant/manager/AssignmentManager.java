@@ -72,14 +72,15 @@ public class AssignmentManager {
     }
 
     private static void insert() throws SQLException {
-        System.out.println("Enter Staff ID, Table ID, Date (yyyy-mm-dd), and Time (hh:mm:ss):");
+        System.out.println("Enter Table ID, Staff ID, Date (yyyy-mm-dd), and Time (hh:mm:ss):");
 
         try {
-            int staffID = Integer.parseInt(scan.nextLine());
             int tableID = Integer.parseInt(scan.nextLine());
+            int staffID = Integer.parseInt(scan.nextLine());
             Date date = Date.valueOf(scan.nextLine());
             Time time = Time.valueOf(scan.nextLine());
-            StaffAssignment assignment = new StaffAssignment(staffID, tableID, date, time);
+            StaffAssignment assignment = new StaffAssignment(tableID, staffID, date, time);
+            System.out.println("Inserting staff assignment..." + " " + assignment);
             repository.insert(assignment);
             System.out.println("Staff assignment inserted successfully.");
         } catch (NumberFormatException e) {
@@ -92,21 +93,21 @@ public class AssignmentManager {
     }
 
     private static void update() throws SQLException {
-        System.out.println("Enter existing Staff ID, Table ID, Date " + "(yyyy-mm-dd), and Time (hh:mm:ss) to update:");
+        System.out.println("Enter existing Table ID, Staff ID, Date " + "(yyyy-mm-dd), and Time (hh:mm:ss) to update:");
         try {
-            int staffID = Integer.parseInt(scan.nextLine());
             int tableID = Integer.parseInt(scan.nextLine());
+            int staffID = Integer.parseInt(scan.nextLine());
             Date date = Date.valueOf(scan.nextLine());
             Time time = Time.valueOf(scan.nextLine());
-            StaffAssignment oldAssignment = repository.findById(staffID, tableID, date, time);
+            StaffAssignment oldAssignment = repository.findById(tableID, staffID, date, time);
             System.out.println(
                 "Enter new Staff ID, new Table ID, new Date " + "(yyyy-mm-dd), and new Time (hh:mm:ss):"
             );
-            int newStaffID = Integer.parseInt(scan.nextLine());
             int newTableID = Integer.parseInt(scan.nextLine());
+            int newStaffID = Integer.parseInt(scan.nextLine());
             Date newDate = Date.valueOf(scan.nextLine());
             Time newTime = Time.valueOf(scan.nextLine());
-            StaffAssignment newAssignment = new StaffAssignment(newStaffID, newTableID, newDate, newTime);
+            StaffAssignment newAssignment = new StaffAssignment(newTableID, newStaffID, newDate, newTime);
             repository.update(oldAssignment, newAssignment);
             System.out.println("Staff assignment updated successfully.");
         } catch (NumberFormatException e) {
@@ -119,14 +120,14 @@ public class AssignmentManager {
     }
 
     private static void deleteAssignment() throws SQLException {
-        System.out.println("Enter Staff ID, Table ID, Date (yyyy-mm-dd), and " + "Time (hh:mm:ss) to delete:");
+        System.out.println("Enter Table ID, Staff ID, Date (yyyy-mm-dd), and " + "Time (hh:mm:ss) to delete:");
 
         try {
-            int staffID = Integer.parseInt(scan.nextLine());
             int tableID = Integer.parseInt(scan.nextLine());
+            int staffID = Integer.parseInt(scan.nextLine());
             Date date = Date.valueOf(scan.nextLine());
             Time time = Time.valueOf(scan.nextLine());
-            repository.delete(staffID, tableID, date, time);
+            repository.delete(tableID, staffID, date, time);
             System.out.println("Staff assignment deleted successfully.");
         } catch (NumberFormatException e) {
             System.out.println("Invalid input. Please enter valid data.");
@@ -138,14 +139,14 @@ public class AssignmentManager {
     }
 
     private static void searchAssignment() throws SQLException {
-        System.out.println("Enter Staff ID, Table ID, Date (yyyy-mm-dd), and " + "Time (hh:mm:ss) to search:");
+        System.out.println("Enter Table ID, Staff ID, Date (yyyy-mm-dd), and " + "Time (hh:mm:ss) to search:");
 
         try {
-            int staffID = Integer.parseInt(scan.nextLine());
             int tableID = Integer.parseInt(scan.nextLine());
+            int staffID = Integer.parseInt(scan.nextLine());
             Date date = Date.valueOf(scan.nextLine());
             Time time = Time.valueOf(scan.nextLine());
-            StaffAssignment assignment = repository.findById(staffID, tableID, date, time);
+            StaffAssignment assignment = repository.findById(tableID, staffID, date, time);
             if (assignment != null) {
                 System.out.println(assignment);
             } else {

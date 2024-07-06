@@ -23,6 +23,14 @@ public class StaffAssignmentRepositoryImpl implements StaffAssignmentRepository 
             pstmt.setDate(3, staffAssignment.getDate());
             pstmt.setTime(4, staffAssignment.getTime());
             pstmt.executeUpdate();
+        } catch (SQLException ex){
+            if(ex.getMessage().contains("STAFF_ASSIGNMENT_TABLE_FK")){
+                System.out.println("Provided TABLE_ID does not exist in TABLE_INFO");
+            } else if(ex.getMessage().contains("STAFF_ASSIGNMENT_STAFF_FK")){
+                System.out.println("The provided Staff_ID does not exist in STAFF.");
+            } else {
+                ex.printStackTrace();
+            }
         }
     }
 
