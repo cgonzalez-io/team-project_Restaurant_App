@@ -19,10 +19,23 @@ public class Staff extends ContactNode {
     this.role = "";
   }
 
-  public Staff(int staffId, String firstName, String lastName, long phone,
+  public Staff(int staffId, String firstName, String lastName, String phone,
                String email, String address, String role, ContactNode next) {
     super(firstName, lastName, phone, email, address, next);
     this.staffID = staffId;
+    this.role = role;
+  }
+
+  public Staff(int staffId, String firstName, String lastName, String phone,
+               String email, String address, String role) {
+    super(firstName, lastName, phone, email, address, null);
+    this.staffID = staffId;
+    this.role = role;
+  }
+
+  public Staff(String firstName, String lastName, String phone, String email,
+               String address, String role) {
+    super(firstName, lastName, phone, email, address, null);
     this.role = role;
   }
 

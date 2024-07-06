@@ -1,21 +1,22 @@
 package restaurant.interfaces;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.util.List;
 import restaurant.entity.StaffAssignment;
 
-/**
- * The StaffAssignmentRepository interface provides methods to interact with a
- * database and perform CRUD operations on StaffAssignment objects.
- */
 public interface StaffAssignmentRepository {
+
   void insert(StaffAssignment staffAssignment) throws SQLException;
 
-  void update(StaffAssignment staffAssignment) throws SQLException;
+  void update(StaffAssignment oldStaffAssignment, StaffAssignment newStaffAssignment) throws SQLException;
 
-  StaffAssignment findById(int assignmentId) throws SQLException;
+  StaffAssignment findById(int tableID, int staffID, Date date, Time time)
+      throws SQLException;
 
-  void delete(int assignmentId)throws SQLException;
+  void delete(int tableID, int staffID, Date date, Time time)
+      throws SQLException;
 
   List<StaffAssignment> findAll() throws SQLException;
 }

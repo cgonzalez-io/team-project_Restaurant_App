@@ -16,15 +16,23 @@ public class Customer extends ContactNode {
     super();
     customerID = 0;
   }
+
   // Add this constructor to fix the issue
-  public Customer(int customerID, String firstName, String lastName, long phone,
-                  String email, String address) {
+  public Customer(int customerID, String firstName, String lastName,
+                  String phone, String email, String address) {
     super(firstName, lastName, phone, email, address, null);
     this.customerID = customerID;
   }
 
-  public Customer(int customerID, String firstName, String lastName, long phone,
-                  String email, String address, ContactNode next) {
+  // Constructor without customerID
+  public Customer(String firstName, String lastName, String phone, String email,
+                  String address) {
+    super(firstName, lastName, phone, email, address, null);
+  }
+
+  public Customer(int customerID, String firstName, String lastName,
+                  String phone, String email, String address,
+                  ContactNode next) {
     super(firstName, lastName, phone, email, address, next);
     this.customerID = customerID;
   }

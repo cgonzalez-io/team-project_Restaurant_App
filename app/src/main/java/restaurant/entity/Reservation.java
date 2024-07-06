@@ -6,7 +6,7 @@ import java.util.Objects;
 
 /**
  * The Reservation class represents a reservation in a restaurant.
- * It contains information such as reservation ID, customer ID, table ID,
+ * It contains information such as reservation ID, customer ID,
  * date, time, and number of people.
  */
 public class Reservation {
@@ -18,7 +18,15 @@ public class Reservation {
   private int numberOfPeople;
   private Reservation next;
 
-  // Constructors
+  // Constructor without reservationID
+  public Reservation(int customerID, Date date, Time time, int numberOfPeople) {
+    this.customerID = customerID;
+    this.date = date;
+    this.time = time;
+    this.numberOfPeople = numberOfPeople;
+  }
+
+  // Constructor with reservationID
   public Reservation(int reservationID, int customerID, Date date, Time time,
                      int numberOfPeople) {
     this.reservationID = reservationID;
