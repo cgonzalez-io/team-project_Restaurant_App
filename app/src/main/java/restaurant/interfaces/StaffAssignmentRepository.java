@@ -10,7 +10,8 @@ public interface StaffAssignmentRepository {
 
   void insert(StaffAssignment staffAssignment) throws SQLException;
 
-  void update(StaffAssignment oldStaffAssignment, StaffAssignment newStaffAssignment) throws SQLException;
+  void update(StaffAssignment oldStaffAssignment,
+              StaffAssignment newStaffAssignment) throws SQLException;
 
   StaffAssignment findById(int tableID, int staffID, Date date, Time time)
       throws SQLException;
