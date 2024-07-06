@@ -10,107 +10,66 @@ import restaurant.entity.superclass.ContactNode;
  */
 public class Staff extends ContactNode {
 
-    private int staffID;
-    private String role;
+  private int staffID;
+  private String role;
 
-    public Staff() {
-        super();
-        this.staffID = 0;
-        this.role = "";
-    }
+  public Staff() {
+    super();
+    this.staffID = 0;
+    this.role = "";
+  }
 
-    public Staff(
-        int staffId,
-        String firstName,
-        String lastName,
-        String phone,
-        String email,
-        String address,
-        String role,
-        ContactNode next
-    ) {
-        super(firstName, lastName, phone, email, address, next);
-        this.staffID = staffId;
-        this.role = role;
-    }
+  public Staff(int staffId, String firstName, String lastName, String phone,
+               String email, String address, String role, ContactNode next) {
+    super(firstName, lastName, phone, email, address, next);
+    this.staffID = staffId;
+    this.role = role;
+  }
 
-    public Staff(
-        int staffId,
-        String firstName,
-        String lastName,
-        String phone,
-        String email,
-        String address,
-        String role
-    ) {
-        super(firstName, lastName, phone, email, address, null);
-        this.staffID = staffId;
-        this.role = role;
-    }
+  public Staff(int staffId, String firstName, String lastName, String phone,
+               String email, String address, String role) {
+    super(firstName, lastName, phone, email, address, null);
+    this.staffID = staffId;
+    this.role = role;
+  }
 
-    public Staff(String firstName, String lastName, String phone, String email, String address, String role) {
-        super(firstName, lastName, phone, email, address, null);
-        this.role = role;
-    }
+  public Staff(String firstName, String lastName, String phone, String email,
+               String address, String role) {
+    super(firstName, lastName, phone, email, address, null);
+    this.role = role;
+  }
 
-    public int getStaffId() {
-        return staffID;
-    }
+  public int getStaffId() { return staffID; }
 
-    public void setStaffId(int staffId) {
-        this.staffID = staffId;
-    }
+  public void setStaffId(int staffId) { this.staffID = staffId; }
 
-    public String getRole() {
-        return role;
-    }
+  public String getRole() { return role; }
 
-    public void setRole(String role) {
-        this.role = role;
-    }
+  public void setRole(String role) { this.role = role; }
 
-    @Override
-    public String toString() {
-        return (
-            "Staff{" +
-            "staffId=" +
-            staffID +
-            ", role='" +
-            role +
-            '\'' +
-            ", name='" +
-            getName() +
-            '\'' +
-            ", firstName='" +
-            getFirstName() +
-            '\'' +
-            ", lastName='" +
-            getLastName() +
-            '\'' +
-            ", phone=" +
-            getPhone() +
-            ", email='" +
-            getEmail() +
-            '\'' +
-            ", address='" +
-            getAddress() +
-            '\'' +
-            ", next=" +
-            getNext() +
-            '}'
-        );
-    }
+  @Override
+  public String toString() {
+    return ("Staff{"
+            + "staffId=" + staffID + ", role='" + role + '\'' + ", name='" +
+            getName() + '\'' + ", firstName='" + getFirstName() + '\'' +
+            ", lastName='" + getLastName() + '\'' + ", phone=" + getPhone() +
+            ", email='" + getEmail() + '\'' + ", address='" + getAddress() +
+            '\'' + ", next=" + getNext() + '}');
+  }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Staff that)) return false;
-        if (!super.equals(o)) return false;
-        return staffID == that.staffID && Objects.equals(role, that.role);
-    }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (!(o instanceof Staff that))
+      return false;
+    if (!super.equals(o))
+      return false;
+    return staffID == that.staffID && Objects.equals(role, that.role);
+  }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), staffID, role);
-    }
+  @Override
+  public int hashCode() {
+    return Objects.hash(super.hashCode(), staffID, role);
+  }
 }
