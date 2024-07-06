@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion.">
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" afterDir="false" />
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Remove manual ID input from Customer and Reservation insertion&#10;&#10;The CustomerManager and ReservationManager classes have been updated to no longer require manual input of the customer and reservation IDs. This enhances the automation of ID assignment in the database, simplifying the data entry process for better user experience.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/CustomerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/repository/CustomerRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,9 +178,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Assignment-Template [build]" />
+        <item itemvalue="Gradle.Assignment-Template [clean]" />
         <item itemvalue="Application.ReservationApp" />
         <item itemvalue="Gradle.Assignment-Template [run]" />
-        <item itemvalue="Gradle.Assignment-Template [clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -208,7 +209,7 @@
       <option name="presentableId" value="Default" />
       <updated>1720182582408</updated>
       <workItem from="1720182584323" duration="444000" />
-      <workItem from="1720228091352" duration="5166000" />
+      <workItem from="1720228091352" duration="7228000" />
     </task>
     <task id="LOCAL-00002" summary="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
       <option name="closed" value="true" />
@@ -242,7 +243,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720233383097</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Remove manual ID input from Customer and Reservation insertion&#10;&#10;The CustomerManager and ReservationManager classes have been updated to no longer require manual input of the customer and reservation IDs. This enhances the automation of ID assignment in the database, simplifying the data entry process for better user experience.">
+      <option name="closed" value="true" />
+      <created>1720233863519</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1720233863519</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,6 +318,7 @@
     <MESSAGE value="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database." />
     <MESSAGE value="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database." />
     <MESSAGE value="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Update README and refine SQL scripts&#10;&#10;The README file has been updated with instructions for setting up the testing environment. Also, necessary changes were made to the SQL scripts and corresponding Dockerfile changes were applied. This included renaming insertv2.sql to insertFinal.sql and final.sql to createFinal.sql, and improving code readability and management of data insertion." />
+    <MESSAGE value="Remove manual ID input from Customer and Reservation insertion&#10;&#10;The CustomerManager and ReservationManager classes have been updated to no longer require manual input of the customer and reservation IDs. This enhances the automation of ID assignment in the database, simplifying the data entry process for better user experience." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove manual ID input from Customer and Reservation insertion&#10;&#10;The CustomerManager and ReservationManager classes have been updated to no longer require manual input of the customer and reservation IDs. This enhances the automation of ID assignment in the database, simplifying the data entry process for better user experience." />
   </component>
 </project>

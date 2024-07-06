@@ -16,7 +16,7 @@ https://hub.docker.com/_/mysql refer to this link for more information on the my
         MYSQL_PASSWORD=admin --name RestaurantDB --pull missing mysql:8.3 --default-authentication-plugin=mysql_native_password
 
 5. OPTIONAL: If you want to use the database in the project, you can use the following command to import the database
-    a. docker exec -i mysql mysql -uroot -proot < ./java/restaurant/sql/db_create/createFinal.sql
+    a. docker exec -i mysql mysql -uroot -ppassword < ./java/restaurant/sql/db_create/createFinal.sql
     b. docker exec -i RestaurantDB mysql -uadmin -padmin < ./java/restaurant/sql/db_insert/insertFinal.sql
 Project Description:
 This project implements a database system for managing restaurant reservations, customers, tables, and staff.

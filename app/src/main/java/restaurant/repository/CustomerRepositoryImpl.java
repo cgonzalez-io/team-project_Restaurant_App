@@ -12,6 +12,12 @@ import restaurant.interfaces.CustomerRepository;
 
 public class CustomerRepositoryImpl implements CustomerRepository {
 
+  /**
+   * Inserts a new customer into the database.
+   *
+   * @param customer the customer object to be inserted
+   * @throws SQLException if an error occurs while accessing the database
+   */
   @Override
   public void insert(Customer customer) throws SQLException {
     String sql = "INSERT INTO CUSTOMER (First_Name, Last_Name, Phone_Number, "
