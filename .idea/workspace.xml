@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Add Docker configuration for RestaurantDB&#10;&#10;A Docker deployment configuration has been added for the RestaurantDB. The configuration sets up a MySQL 8.3 image with the necessary environment variables for database connectivity. Port binding is also established to connect on port 3306.">
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/StaffManager.java" afterDir="false" />
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/entity/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/entity/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/sql/db_create/create.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/sql/db_create/createv2.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/sql/db_insert/final.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/sql/db_insert/insert.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/sql/db_select/select.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/sql/db_select/selectv2.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/sql/final.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/StaffAssignmentRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/StaffAssignmentRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/entity/RestaurantTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/entity/RestaurantTableTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservesRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservesRepositoryImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +46,11 @@
     </system>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="deliverable-4" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubProjectSettings">
@@ -65,16 +60,32 @@
       </list>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2ipLTcnB83CXRZ8ZINA44NQDn1e" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Assignment-Template [build].executor": "Run",
     "Gradle.Assignment-Template [clean].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.google.cloudcode.ide_session_index": "20240705_0001",
     "git-widget-placeholder": "deliverable-4",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "/home/abaddon/IdeaProjects/Assignment-Template/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier"
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager" selected="Gradle.Assignment-Template [build]">
@@ -129,8 +140,38 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database.">
+      <option name="closed" value="true" />
+      <created>1720182409293</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720182409293</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database." />
+      <created>1720182582408</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1720182582408</updated>
+      <workItem from="1720182584323" duration="444000" />
+      <workItem from="1720228091352" duration="719000" />
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -145,6 +186,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Docker configuration for RestaurantDB&#10;&#10;A Docker deployment configuration has been added for the RestaurantDB. The configuration sets up a MySQL 8.3 image with the necessary environment variables for database connectivity. Port binding is also established to connect on port 3306." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Docker configuration for RestaurantDB&#10;&#10;A Docker deployment configuration has been added for the RestaurantDB. The configuration sets up a MySQL 8.3 image with the necessary environment variables for database connectivity. Port binding is also established to connect on port 3306." />
+    <MESSAGE value="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database." />
   </component>
 </project>
