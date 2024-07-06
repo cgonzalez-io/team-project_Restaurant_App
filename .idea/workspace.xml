@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database.">
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/entity/RestaurantTableTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/entity/RestaurantTableTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservesRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/restaurant/repository/ReservesRepositoryImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/ReservationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/ReservationApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservationManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,9 +167,17 @@
       <option name="presentableId" value="Default" />
       <updated>1720182582408</updated>
       <workItem from="1720182584323" duration="444000" />
-      <workItem from="1720228091352" duration="719000" />
+      <workItem from="1720228091352" duration="2307000" />
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
+      <option name="closed" value="true" />
+      <created>1720228906808</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1720228906808</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +197,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add Docker configuration for RestaurantDB&#10;&#10;A Docker deployment configuration has been added for the RestaurantDB. The configuration sets up a MySQL 8.3 image with the necessary environment variables for database connectivity. Port binding is also established to connect on port 3306." />
     <MESSAGE value="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database." />
+    <MESSAGE value="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling." />
   </component>
 </project>
