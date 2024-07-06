@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/ReservationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/ReservationApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/StaffManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/StaffManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +170,7 @@
       <option name="presentableId" value="Default" />
       <updated>1720182582408</updated>
       <workItem from="1720182584323" duration="444000" />
-      <workItem from="1720228091352" duration="2307000" />
+      <workItem from="1720228091352" duration="2732000" />
     </task>
     <task id="LOCAL-00002" summary="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
       <option name="closed" value="true" />
@@ -177,7 +180,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720228906808</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database.">
+      <option name="closed" value="true" />
+      <created>1720230822709</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1720230822709</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +209,8 @@
     <MESSAGE value="Add Docker configuration for RestaurantDB&#10;&#10;A Docker deployment configuration has been added for the RestaurantDB. The configuration sets up a MySQL 8.3 image with the necessary environment variables for database connectivity. Port binding is also established to connect on port 3306." />
     <MESSAGE value="Remove unnecessary SQL scripts&#10;&#10;The commit involves the deletion of various SQL scripts that were redundant or obsolete. This clean-up action simplifies the database management and enhances readability of the code base by removing unnecessary SQL scripts used for creating, inserting, selecting and other actions on the database." />
     <MESSAGE value="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling." />
+    <MESSAGE value="Enhance manager classes, add new manager and fix input issues&#10;&#10;Enhancements include updates to existing manager classes for staff, reservations and tables, introducing additional options such as staff and table management functions. A new manager, AssignmentManager, has also been added for better organization. Made corrections to inputs where problematic cases may occur, like entering non-numeric values for numeric entries." />
+    <MESSAGE value="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database." />
   </component>
 </project>
