@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database.">
+    <list default="true" id="bc751db8-20e8-4a4c-826e-95207e69ebe3" name="Changes" comment="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/ReservationApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/ReservationApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/AssignmentManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/CustomerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/ReservesManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/StaffManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/StaffManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/restaurant/manager/TableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +30,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="RestaurantDB" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="RestaurantDB" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -79,6 +79,8 @@
   "keyToString": {
     "Gradle.Assignment-Template [build].executor": "Run",
     "Gradle.Assignment-Template [clean].executor": "Run",
+    "Gradle.Assignment-Template [run].executor": "Run",
+    "Gradle.Assignment-Template:app [:app:ReservationApp.main()].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.google.cloudcode.ide_session_index": "20240705_0001",
@@ -93,7 +95,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Gradle.Assignment-Template [build]">
+  <component name="RunManager" selected="Application.ReservationApp">
+    <configuration name="ReservationApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="restaurant.ReservationApp" />
+      <module name="app.RestaurantDB.app.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="restaurant.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Assignment-Template [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -138,9 +153,33 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="Assignment-Template [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--stacktrace" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ReservationApp" />
         <item itemvalue="Gradle.Assignment-Template [build]" />
+        <item itemvalue="Gradle.Assignment-Template [run]" />
         <item itemvalue="Gradle.Assignment-Template [clean]" />
       </list>
     </recent_temporary>
@@ -170,7 +209,7 @@
       <option name="presentableId" value="Default" />
       <updated>1720182582408</updated>
       <workItem from="1720182584323" duration="444000" />
-      <workItem from="1720228091352" duration="2732000" />
+      <workItem from="1720228091352" duration="4670000" />
     </task>
     <task id="LOCAL-00002" summary="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling.">
       <option name="closed" value="true" />
@@ -188,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720230822709</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database.">
+      <option name="closed" value="true" />
+      <created>1720230865782</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1720230865782</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +258,7 @@
     <MESSAGE value="Improve test code formatting and nest SQL operations&#10;&#10;Test cases in RestaurantTableTest and ReservesRepositoryImplTest are uniformly formatted with the updated indentation. SQL operations in ReservesRepositoryImplTest are now nested inside try-catch blocks, enhancing readability and error handling." />
     <MESSAGE value="Enhance manager classes, add new manager and fix input issues&#10;&#10;Enhancements include updates to existing manager classes for staff, reservations and tables, introducing additional options such as staff and table management functions. A new manager, AssignmentManager, has also been added for better organization. Made corrections to inputs where problematic cases may occur, like entering non-numeric values for numeric entries." />
     <MESSAGE value="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database." />
-    <option name="LAST_COMMIT_MESSAGE" value="Expand reservation application functionalities&#10;&#10;Extended the reservation application to include management of staff assignments, staff, and tables. Additionally, added back navigation from management menus to the main menu, providing a more user-friendly interface. Improved the insert functionality to fully automate ID assignment in the database." />
+    <MESSAGE value="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database." />
+    <option name="LAST_COMMIT_MESSAGE" value="Expand reservation application functionalities &#10;&#10;In this update, the reservation application was extended to include the management of staff assignments, staff, and tables. Added back navigation from management menus to the main menu to provide a more user-friendly interface. Improved the insert functionality for better automation of ID assignment in the database." />
   </component>
 </project>

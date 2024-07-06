@@ -1,6 +1,6 @@
 FROM mysql:latest
 LABEL authors="abaddon"
-COPY ./src/repository/final.sql /docker-entrypoint-initdb.d/final.sql
+COPY ./src/repository/createFinal.sql /docker-entrypoint-initdb.d/createFinal.sql
 EXPOSE 3306
-RUN final.sql
+RUN createFinal.sql
 ENTRYPOINT ["top", "-b","run"]
