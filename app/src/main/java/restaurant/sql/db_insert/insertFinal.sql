@@ -34,8 +34,7 @@ INSERT INTO RESERVES (Reservation_ID, Table_ID)
 VALUES
     (1, 1),
     (1, 2),
-    (2, 2),
-    (3, 3);
+    (2, 2);
 
 -- Insert sample data into ASSIGNED_TO table (linking staff with tables for specific times)
 INSERT INTO ASSIGNED_TO (Table_ID, Staff_ID, Time, Date)

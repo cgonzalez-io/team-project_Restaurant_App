@@ -35,6 +35,17 @@ public class ContactNode {
     this.address = address;
     this.next = next;
   }
+  //constructor without next
+    public ContactNode(String firstName, String lastName, String phone,
+                         String email, String address) {
+        this.name = firstName + " " + lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.next = null;
+    }
 
   @Override
   public String toString() {
